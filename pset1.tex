@@ -10,6 +10,7 @@
 \usepackage[noend]{algpseudocode}
 %\documentstyle[nips14submit_09,times,art10]{article} % For LaTeX 2.09
 
+\usepackage{mathrsfs}
 \usepackage{graphicx}
 \usepackage{caption}
 \usepackage{subcaption}
@@ -79,10 +80,82 @@ of Harmonic Analysis 2016 at Courant Institute of Mathematical Sciences.
 \hfill
 \begin{figure}[h!]
   \centering
-    \includegraphics[width=1\textwidth]{MA-2-23-8.png}
+    \includegraphics[width=1\textwidth]{HA-1-1.png}
 \end{figure}
 \end{question}
+
+\pagebreak
+ 
 \begin{solution}
+We first verify that the given closed form formula for the Dirichlet Kernel $D_n$. Fix 
+$x \in \mathbb{T}$ and $N \in \mathbb{N}$. 
+From the sum formula for geometric series, and the Euler's identity $
+\sin(2\pi nx) = \dfrac{e(-nx) + e(nx)}{2i}$, it follows that 
+
+\eQb
+D_{n}(x) &=& \sum_{n=-N}^{N} e(nx) \\
+&=& e(-Nx) \sum_{n=0}^{2N} e(nx) \\
+&=& e(-Nx) \dfrac{1 - e((2N+1)x)}{1 - e(x)} \\
+&=& \dfrac{e(-Nx) - e((N+1)x)}{1-e(x)} \\
+&=& \dfrac{e(-(N+\frac{1}{2})x - e((N+\frac{1}{2})x)}{e(-\frac{1}{2}x) - e(\frac{1}{2}x)} \\
+&=& \dfrac{\sin(2\pi(N+\frac{1}{2})x)}{\sin(2\pi(\frac{1}{2})x)} =
+ \dfrac{\sin(2(N+1)\pi x)}{\sin(\pi x)},
+\eQe
+as required. The graphs of $D_2$ and $D_5$ are attached below. The blue graph
+corresponds to $D_2$ and the green corresponds to $D_5$.
+\begin{figure}[!ht]
+  \caption{The graph of $D_n$ for $n=2,5$}
+  \centering
+    \includegraphics[width=0.5\textwidth]{Dirichlet-plot}
+\end{figure}
+
+\smallskip
+
+We proceed to prove the given bound. Fix $x \in \mathbb{T}$ and
+$n \in \mathbb{Z}_{+}$. By the triangle inequality, we have
+\eQb
+\left| D_n(x) \right| &=& \left| \sum_{k=-N}^{N} e(nx) \right| \\ 
+&\leq& \sum_{k=-N}^{N} \left| e(nx) \right| = 2N + 1 \leq 3N. \\ 
+\eQe
+
+As $x \in [-\dfrac{1}{2},\dfrac{1}{2}]$, it follows that $|\sin(\pi x)| \geq |x|$.
+Now, observe that
+\eQb
+\left| D_n(x) \right| 
+&=& \left| \dfrac{\sin((2N+1)\pi x}{\sin(\pi x)} \right| \\
+&=& \dfrac{| \sin((2N+1)\pi x| }{ | \sin(\pi x)| } \\
+&\leq&  \dfrac{|\sin((2N+1)\pi x)|}{|x|} \\
+&\leq& \dfrac{1}{|x|}.
+\eQe
+Hence, we have proven the bound
+\eQb
+|D_N(x)| &\leq& C\min(N,\dfrac{1}{|x|}). \\
+\eQe
+
+\smallskip
+
+From the above bound, we obtain that $|D_n(x)| \leq C\dfrac{1}{|x|}$ 
+for all $x \in \mathbb{T}$ and
+$n \geq 2$ with some absolute constant $C$. 
+By monotonicity of Lebesgue integration, it follows that
+\eQb
+||D_N ||_{L^{1}(\mathbb{T})} &=& \int_{\mathbb{T}} |D_n(x)| dx \\ 
+&\leq& \int_{\mathbb{T}} C\min(N,\dfrac{1}{|x|}) dx \\
+&\leq& 2C(\int_{0}^{\frac{1}{N}} \dfrac{1}{N} dx
++ \int_{\frac{1}{N}}^{\frac{1}{2}}\dfrac{1}{|x|} dx) \\
+&=& 2C(1+ \log(|\dfrac{1}{2}|) - \log(|\dfrac{1}{N}|)) \\ 
+&=& log(10^{2C}) + \log(\frac{1}{2}^{2C}) + log(N)) \\
+&=& log(5^{2c} N) \\
+\eQe
+Now, for the lower bound, we have
+\eQb
+||D_N ||_{L^{1}(\mathbb{T})} &=& \int_{\mathbb{T}} |D_n(x)| dx \\
+&=& \int_{-\frac{1}{2}}^{\frac{1}{2}} |D_n(x)| \\ 
+&\geq& \int_{1}^{N} \dfrac{|\sin(\pi x)|}{|\pi x|} dx \\
+&=& \sum_{k=1}^{N-1} \int_{k}^{k+1} \dfrac{|\sin(\pi x)|}{|\pi x|}dx \\
+&\geq& \sum_{k=1}^{N-1} \dfrac{1}{k} \\
+\eQe
+ 
 \end{solution}
 
 \newpage
@@ -91,22 +164,87 @@ of Harmonic Analysis 2016 at Courant Institute of Mathematical Sciences.
 \hfill
 \begin{figure}[h!]
   \centering
-    \includegraphics[width=1\textwidth]{MA-2-23-8.png}
+    \includegraphics[width=1\textwidth]{HA-1-2.png}
 \end{figure}
 \end{question}
 \begin{solution}
-\end{solution}
 
+\end{solution}
+Let $u \in \mathbb{M}(\mathbb{T})$ 
+such that $\sum_{n \in \mathbb{Z}} |\hat{u}(n)| < \infty$. By the Lebesgue-Radon-Nikodym
+theorem (Rudin pg.121), there exists $f \in L_1(\mathbb{T})$ such that $u(dx) = f(x)dx$,
+where $dx$ is the Lebesgue measure, restricted to Borel sets of $\mathbb{T}$. Let $f$ be
+such function in $L_1(\mathbb{T})$. As 
+$u(dx) = f(x)dx$, it follows that $\hat{u}(n) = \hat{f}(n)$, thus $\sum_{n \mathbb{Z}} 
+|\hat{f}(n)| < \infty$. We claim that $f$ is continuous. Fix $\epsilon > 0$. Hence,
+this show that $f \in \mathbb{C}(\mathbb{T})$ as desired. This shows that
+$\mathbb{A}(\mathbb{T})$ is an algebra under multiplication. 
+\eQb
+fg &\sim& \sum_{n = -\infty}^{\infty} \sum_{m \in \mathbb{Z}} \hat{f}(m) \hat{g}(n-m) e(nx)   
+\eQe
+
+Let $f,g \in L^{2}(\mathbb{T})$. 
 \newpage
 
 \begin{question}[3]
 \hfill
 \begin{figure}[h!]
   \centering
-    \includegraphics[width=1\textwidth]{MA-2-23-8.png}
+    \includegraphics[width=1\textwidth]{HA-1-3.png}
 \end{figure}
 \end{question}
-\begin{solution}
+\begin{solution} Let $K_N$ be the Fejer kernel with the positive integer $n$. \\
+
+\smallskip
+
+\textbf{(1.16)} 
+By the definition of $n$th Fourier coefficient, we have
+\eQb
+\hat{K}_{N}(n) &=& \int_{\mathbb{T}} K_n(x)e(-nx) dx \\
+&=& \int_{\mathbb{T}} (\dfrac{1}{N} \sum_{k=0}^{N-1} D_k(x)) e(-nx) dx \\
+&=& \dfrac{1}{N} \sum_{k=0}^{N-1} \int_{\mathbb{T}} D_k(x) e(-nx) dx \\
+&=& \dfrac{1}{N} \sum_{k=0}^{N-1} \int_{\mathbb{T}} (\sum_{l=-k}^{k}e(lx))  e(-nx) dx \\
+&=& \dfrac{1}{N} \sum_{k=0}^{N-1} \sum_{l=-k-n}^{k-n} \int_{\mathbb{T}} e(lx) dx \\
+&=& \dfrac{1}{N} \sum_{k=0}^{N-1} \sum_{l=-k-n}^{k-n} 1 \\
+\eQe
+
+\bigskip
+
+\textbf{(1.17)}
+Fix $x \in \mathbb{T}$, and $N \in \mathbb{N}$.
+Now, by definition of Fejer Kernel, we have
+\eQb
+K_N(x) &=& \dfrac{1}{N} \sum_{n=0}^{N-1} D_n(x) \\
+&=& \dfrac{1}{N} \sum_{n=0}^{N-1} \dfrac{\sin((2n+1)\pi x)}{\sin(\pi x)} \\
+&=& \dfrac{1}{N\sin(\pi x)^2}\sum_{n=0}^{N-1} \sin((2n+1)\pi x)\sin(\pi x). \\
+\eQe
+By the use of the trig identity, $\sin(a)\sin(b) = \dfrac{1}{2}\cos(a-b) - \cos(a+b)$, and
+cancellation from a telescoping sum, it follows that
+\eQb
+K_N(x) &=& \dfrac{1}{2N\sin(\pi x)^2}\sum_{n=0}^{N-1}
+(\cos(2n \pi x) - \cos((2n + 2)\pi x)) \\
+&=& \dfrac{1}{2N\sin(\pi x)^2}(1 - \cos(2N\pi x)) \\
+\eQe
+Lastly, from the trig identity, $2\sin(a)^2 = 1 - \cos(2a)$, we finally obtain that
+\eQb
+K_N(x) &=& \dfrac{1}{2N\sin(\pi x)^2}(2\sin(N\pi x)^2)\\
+&=& \dfrac{1}{N}(\dfrac{\sin(N\pi x)}{\sin(\pi x)})^2,
+\eQe
+as required. 
+
+\hfill $\qed$
+
+\bigskip
+
+\textbf{(1.18)} Fix $x \in \mathbb{T}$, and $N \in \mathbb{N}$. 
+As $\dfrac{1}{N} \geq 0$, and 
+$(\dfrac{\sin(N \pi x)}{\sin(\pi x)})^2 \geq 0$, it follows that
+\eQb
+0 &\leq& \dfrac{1}{N} \dfrac{\sin(N \pi x)}{\sin(\pi x)} \\
+&=& K_N(x). 
+\eQe
+
+
 \end{solution}
 
 \newpage
@@ -115,10 +253,31 @@ of Harmonic Analysis 2016 at Courant Institute of Mathematical Sciences.
 \hfill
 \begin{figure}[h!]
   \centering
-    \includegraphics[width=1\textwidth]{MA-2-23-8.png}
+    \includegraphics[width=1\textwidth]{HA-1-4.png}
 \end{figure}
 \end{question}
-\begin{solution}
+\begin{solution} \hfill \\
+\textbf{(a)} Let $0 \leq s \leq 1$, and $h = \tau_{-\theta}f$, where $\tau_{\theta}f(x)
+= f(x-z) $
+is the translation operator, parametrized by $\theta$. 
+By the Corollary $1.6$,
+and the linearity of integration, it follows that
+\eQb
+||h - f||_2^2 &=& \sum_{-\infty}^{\infty} |\widehat{(h-f)}(n)|^2  \\
+&=& \sum_{-\infty}^{\infty} \hat{h}(n) - \hat{f}(n)|^2. 
+\eQe 
+Now, we have a particular relation between the Fourier transform 
+and translation as follows (pg. 4 in Schleg): 
+\eQb
+\widehat{{\tau}_{-\theta}f}(n) = e(\theta n)\hat{f}(n).
+\eQe
+Hence, it follows that
+\eQb
+|| h - f||_{2}
+\eQe 
+\bigskip
+
+\textbf{(b)}
 \end{solution}
 
 \newpage
@@ -127,10 +286,47 @@ of Harmonic Analysis 2016 at Courant Institute of Mathematical Sciences.
 \hfill
 \begin{figure}[h!]
   \centering
-    \includegraphics[width=1\textwidth]{MA-2-23-8.png}
+    \includegraphics[width=1\textwidth]{HA-1-5.png}
 \end{figure}
 \end{question}
 \begin{solution}
 \end{solution}
 
+\bigskip
+
+\begin{question}[6]
+\hfill
+\begin{figure}[h!]
+  \centering
+    \includegraphics[width=1\textwidth]{HA-1-6.png}
+\end{figure}
+\end{question}
+\begin{solution}
+As we have $f,g \in L^2(\mathbb{T})$, by Corollary $1.6$, the given inequality is equivalent to
+\eQb
+\sum_{k \in \mathbb{Z}} |\widehat{f * g}(n)|^2 &\leq&
+\sum_{k \in \mathbb{Z}} |\widehat{f * f}(n)|  
+\sum_{k \in \mathbb{Z}} |\widehat{g * g}(n)|. \\
+\eQe
+Since $\widehat{f*g}(n) = \hat{f}(n)\hat{g}(n)$, the above inequality is again equivalent to
+\eQb
+\sum_{k \in \mathbb{Z}} |\hat{f}(n)\hat{g}(n)|^2 &\leq&
+\sum_{k \in \mathbb{Z}} |\hat{f}(n)|^2 
+\sum_{k \in \mathbb{Z}} |\hat{g}(n)|^2. \\
+\eQe
+which holds by the Cauchy-Schwarz inequality on the inner product space of $l^2(\mathbb{T})$.
+
+\hfill $\qed$ 
+\end{solution}
+\newpage
+
+\begin{question}[Extra]
+\hfill
+\begin{figure}[h!]
+  \centering
+    \includegraphics[width=1\textwidth]{HA-1-Extra.png}
+\end{figure}
+\end{question}
+\begin{solution}
+\end{solution}
 \end{document}

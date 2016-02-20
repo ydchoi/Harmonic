@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  16 FEB 2016 17:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  19 FEB 2016 20:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -344,7 +344,11 @@ Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
 \ALG@tmplength=\skip56
 )
 Document Style - pseudocode environments for use with the `algorithmicx' style
-) (/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphicx.sty
+) (/usr/local/texlive/2015/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
+Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
+\symrsfs=\mathgroup6
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphics.sty
@@ -445,25 +449,25 @@ File: listings.cfg 2014/09/06 1.5e listings configuration
 ))
 Package: listings 2014/09/06 1.5e (Carsten Heinz)
 
-No file pset1.aux.
+(./pset1.aux)
 \openout1 = `pset1.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 68.
-(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 69.
+ (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 \AtBeginShipoutBox=\box36
@@ -482,7 +486,7 @@ File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 \makeMPintoPDFobject=\count153
 \everyMPtoPDFconversion=\toks33
 )
-Package hyperref Info: Link coloring OFF on input line 68.
+Package hyperref Info: Link coloring OFF on input line 69.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
@@ -491,9 +495,11 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count154
 )
-LaTeX Info: Redefining \ref on input line 68.
-LaTeX Info: Redefining \pageref on input line 68.
-LaTeX Info: Redefining \nameref on input line 68.
+LaTeX Info: Redefining \ref on input line 69.
+LaTeX Info: Redefining \pageref on input line 69.
+LaTeX Info: Redefining \nameref on input line 69.
+
+(./pset1.out) (./pset1.out)
 \@outlinefile=\write3
 \openout3 = `pset1.out'.
 
@@ -518,210 +524,133 @@ Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count155
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 72.
-LaTeX Font Info:    Try loading font information for U+msa on input line 72.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 73.
+LaTeX Font Info:    Try loading font information for U+msa on input line 73.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 72.
+LaTeX Font Info:    Try loading font information for U+msb on input line 73.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 73.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/jknapltx/ursfs.fd
+File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
+)
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 72.
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 72.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 73.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 73.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 73.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 74.
 
-
-LaTeX Warning: File `MA-2-23-8.png' not found on input line 84.
-
-
-! Package pdftex.def Error: File `MA-2-23-8.png' not found.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.84 ...graphics[width=1\textwidth]{MA-2-23-8.png}
-                                                  
-? 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[1
-
-{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-
-LaTeX Warning: File `MA-2-24-6.png' not found on input line 116.
-
-
-! Package pdftex.def Error: File `MA-2-24-6.png' not found.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.116 ...raphics[width=1\textwidth]{MA-2-24-6.png}
-                                                  
-? 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[2]
-
-LaTeX Warning: File `MA-2-25-8.png' not found on input line 153.
-
-
-! Package pdftex.def Error: File `MA-2-25-8.png' not found.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.153 ...raphics[width=1\textwidth]{MA-2-25-8.png}
-                                                  
-? 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[3] [4]
-
-LaTeX Warning: File `MA-2-26-6.png' not found on input line 208.
-
-
-! Package pdftex.def Error: File `MA-2-26-6.png' not found.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.208 ...raphics[width=1\textwidth]{MA-2-26-6.png}
-                                                  
-? 
-[5] [6]
-
-LaTeX Warning: File `MA-2-27-12.png' not found on input line 265.
-
-
-! Package pdftex.def Error: File `MA-2-27-12.png' not found.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.265 ...aphics[width=1\textwidth]{MA-2-27-12.png}
-                                                  
-? 
-[7]
-
-LaTeX Warning: File `MA-2-28-5.png' not found on input line 279.
-
-
-! Package pdftex.def Error: File `MA-2-28-5.png' not found.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.279 ...raphics[width=1\textwidth]{MA-2-28-5.png}
-                                                  
-? 
-[8]
-
-LaTeX Warning: File `MA-2-29-7.png' not found on input line 296.
-
-
-! Package pdftex.def Error: File `MA-2-29-7.png' not found.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.296 ...raphics[width=1\textwidth]{MA-2-29-7.png}
-                                                  
-? 
-[9] [10]
-
-LaTeX Warning: File `MA-2-210-4.png' not found on input line 374.
-
-
-! Package pdftex.def Error: File `MA-2-210-4.png' not found.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.374 ...aphics[width=1\textwidth]{MA-2-210-4.png}
-                                                  
-? 
+<HA-1-1.png, id=4, 525.965pt x 243.91125pt>
+File: HA-1-1.png Graphic file (type png)
+ <use HA-1-1.png>
+Package pdftex.def Info: HA-1-1.png used on input line 83.
+(pdftex.def)             Requested size: 397.48499pt x 184.33609pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [11]
-[12]
+ [1
 
-LaTeX Warning: File `MA-2-211-5.png' not found on input line 410.
+{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./HA-1-
+1.png>]
+<Dirichlet-plot.png, id=16, 339.2675pt x 253.94875pt>
+File: Dirichlet-plot.png Graphic file (type png)
+ <use Dirichlet-plot.png>
+Package pdftex.def Info: Dirichlet-plot.png used on input line 109.
+(pdftex.def)             Requested size: 198.7425pt x 148.76285pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [2 <./Dirichlet-plot.png>] [3] <HA-1-2.png, id=38, 530.98375pt x 231.86626pt>
+File: HA-1-2.png Graphic file (type png)
+
+<use HA-1-2.png>
+Package pdftex.def Info: HA-1-2.png used on input line 167.
+(pdftex.def)             Requested size: 397.48499pt x 173.57376pt.
+ [4 <./HA-1-2.png>]
+<HA-1-3.png, id=45, 500.87125pt x 199.74625pt>
+File: HA-1-3.png Graphic file (type png)
+ <use HA-1-3.png>
+Package pdftex.def Info: HA-1-3.png used on input line 193.
+(pdftex.def)             Requested size: 397.48499pt x 158.5232pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 196--197
+
+ []
 
 
-! Package pdftex.def Error: File `MA-2-211-5.png' not found.
+Underfull \vbox (badness 2173) has occurred while \output is active []
 
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.410 ...aphics[width=1\textwidth]{MA-2-211-5.png}
-                                                  
-? 
-[13]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 420.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 420.
+ [5 <./HA-1-3.png>] [6] <HA-1-4.png, id=56, 442.65375pt x 197.73875pt>
+File: HA-1-4.png Graphic file (type png)
+ <use HA-1-4.png>
+Package pdftex.def Info: HA-1-4.png used on input line 256.
+(pdftex.def)             Requested size: 397.48499pt x 177.57098pt.
+
+[7 <./HA-1-4.png>] <HA-1-5.png, id=64, 500.87125pt x 62.2325pt>
+File: HA-1-5.png Graphic file (type png)
+
+<use HA-1-5.png>
+Package pdftex.def Info: HA-1-5.png used on input line 289.
+(pdftex.def)             Requested size: 397.48499pt x 49.38913pt.
+ <HA-1-6.png, id=65, 435.6275pt x 85.31876pt>
+File: HA-1-6.png Graphic file (type png)
+ <use HA-1-6.png>
+Package pdftex.def Info: HA-1-6.png used on input line 301.
+(pdftex.def)             Requested size: 397.48499pt x 77.84846pt.
+
+[8 <./HA-1-5.png> <./HA-1-6.png>]
+<HA-1-Extra.png, id=74, 515.9275pt x 147.55125pt>
+File: HA-1-Extra.png Graphic file (type png)
+ <use HA-1-Extra.png>
+Package pdftex.def Info: HA-1-Extra.png used on input line 327.
+(pdftex.def)             Requested size: 397.48499pt x 113.68008pt.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 332.
+ [9 <./HA-1-Extra.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 332.
  (./pset1.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 420.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 420.
-
-
-Package rerunfilecheck Warning: File `pset1.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `pset1.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 420.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 332.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 332.
+Package rerunfilecheck Info: File `pset1.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 332.
  ) 
 Here is how much of TeX's memory you used:
- 10223 strings out of 493089
- 152140 string characters out of 6134842
- 248549 words of memory out of 5000000
- 13536 multiletter control sequences out of 15000+600000
- 15566 words of font info for 37 fonts, out of 8000000 for 9000
+ 10278 strings out of 493089
+ 153236 string characters out of 6134842
+ 251726 words of memory out of 5000000
+ 13583 multiletter control sequences out of 15000+600000
+ 14377 words of font info for 38 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,9n,39p,251b,472s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 37i,9n,39p,251b,420s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/te
 xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/tex
 live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texli
 ve/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive
 /2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2
-015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2015
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2015/te
-xmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/201
+015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2015
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2015/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2015/texmf
+-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2015/t
+exmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/201
 5/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2015/texmf-
 dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts
-/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw
-/times/utmri8a.pfb>
-Output written on pset1.pdf (13 pages, 148567 bytes).
+/type1/urw/times/utmr8a.pfb>
+Output written on pset1.pdf (9 pages, 457513 bytes).
 PDF statistics:
- 131 PDF objects out of 1000 (max. 8388607)
- 101 compressed objects within 2 object streams
- 23 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 132 PDF objects out of 1000 (max. 8388607)
+ 90 compressed objects within 1 object stream
+ 18 named destinations out of 1000 (max. 500000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 
