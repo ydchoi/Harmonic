@@ -90,8 +90,6 @@ We first verify that the given closed form formula for the Dirichlet Kernel $D_n
 $x \in \mathbb{T}$ and $N \in \mathbb{N}$. 
 From the sum formula for geometric series, and the Euler's identity $
 \sin(2\pi nx) = \dfrac{e(-nx) + e(nx)}{2i}$, it follows that 
-
-
 \eQb
 D_{n}(x) &=& \sum_{n=-N}^{N} e(nx) = e(-Nx) \sum_{n=0}^{2N} e(nx) \\
 &=& e(-Nx) \dfrac{1 - e((2N+1)x)}{1 - e(x)} = \dfrac{e(-Nx) - e((N+1)x)}{1-e(x)} \\
@@ -134,7 +132,7 @@ Therefore, we obtain that
 
 \smallskip
 
-Now, using the monotonicity of Lebesgue integration and additivity over domain gies 
+Now, using the monotonicity of Lebesgue integration and additivity over domain gives 
 \eQb
 ||D_N ||_{L^{1}(\mathbb{T})} &=& \int_{\mathbb{T}} |D_n(x)| dx \leq
  \int_{\mathbb{T}} 3\min(N,\dfrac{1}{|x|}) dx \\
@@ -143,14 +141,29 @@ Now, using the monotonicity of Lebesgue integration and additivity over domain g
 &=& 6 + 6(\log(\dfrac{1}{2}) - \log(\dfrac{1}{N}) = 6 + 6\log(\dfrac{1}{2}) + 6\log(N) \leq C_1log(N),
 \eQe
 where a sufficiently large $C_1$, that satisfies the last inequality when $N = 2$. 
-Now, for the lower bound, we have
+Now, for the lower bound, using the fact that $\sin(\pi x) \leq \pi x$ for $x \in [0,\dfrac{1}{2}]$,
+ we have
 \eQb
-||D_N ||_{L^{1}(\mathbb{T})} &=& \int_{\mathbb{T}} |D_n(x)| dx \leq
+||D_N ||_{L^{1}(\mathbb{T})} &=& \int_{\mathbb{T}} |D_n(x)| dx = 2\int_{0}^{\frac{1}{2}}
+|\dfrac{\sin(2N+1)\pi x}{\sin(\pi x)} | dx \\
+&\geq& \dfrac{2}{\pi} \int_{0}^{\frac{1}{2}} \dfrac{|\sin(2N+1)\pi x}{x} dx. \\
 \eQe
- 
+Now, using change of variable with $x = (2N+1)\pi t$, we can continue the computation as follows:
+\eQb 
+||D_N ||_{L^{1}(\mathbb{T})} 
+&\geq& C \int_{0}^{(N+\frac{1}{2})\pi} \dfrac{|\sin(t)|}{t} dt. 
+\geq C \int_{0}^{N\pi} \dfrac{|\sin(t)|}{t} dt. \\
+&=& C \sum_{i=1}^{N} \int_{(i-1)\pi}^{i\pi} \dfrac{|\sin(t)|}{t} dt. 
+\geq C \sum_{i=1}^{N} \dfrac{1}{(i+1)\pi} \int_{(i-1)\pi}^{i\pi} |\sin(t)| dt. \\
+&=& C \sum_{i=1}^{N}\dfrac{1}{(i+1)\pi} \cdot \dfrac{\pi}{2}  
+\geq C' \sum_{i=1}^{N} \dfrac{1}{i} \geq  C''\log(N),
+\eQe
+as $\sum_{i=1}^{N} \dfrac{1}{i} \geq c \log(N)$ for some $c$ for $N \geq 2$. Choosing the maximum
+$C$ from the upper and the lower bound, we have shown the desired bound on the $L_1$ norm of $D_n$.
+\hfill $\qed
 \end{solution}
 
-\newpage
+\bigskip
 
 \begin{question}[2]
 \hfill
@@ -362,17 +375,29 @@ it follows that $\int_{\mathbb{T}} |S_n f - g| \to 0$ in $L^1(\mathbb{T})$.
 \begin{solution}
 As we have $f,g \in L^2(\mathbb{T})$, by Corollary $1.6$, the given inequality is equivalent to
 \eQb
-\sum_{k \in \mathbb{Z}} |\widehat{f * g}(n)|^2 &\leq&
-\sqrt{\sum_{k \in \mathbb{Z}} |\widehat{f * f}(n)|}  
-\sqrt{\sum_{k \in \mathbb{Z}} |\widehat{g * g}(n)|}. \\
+\sum_{n \in \mathbb{Z}} |\widehat{f * g}(n)|^2 &\leq&
+\sqrt{\sum_{n \in \mathbb{Z}} |\widehat{f * f}(n)|^2}  
+\sqrt{\sum_{n \in \mathbb{Z}} |\widehat{g * g}(n)|^2}. \\
 \eQe
 Since $\widehat{f*g}(n) = \hat{f}(n)\hat{g}(n)$, the above inequality is again equivalent to
 \eQb
-\sum_{k \in \mathbb{Z}} |\hat{f}(n)\hat{g}(n)|^2 &\leq&
-\sum_{k \in \mathbb{Z}} |\hat{f}(n)|^2 
-\sum_{k \in \mathbb{Z}} |\hat{g}(n)|^2. \\
+\big( \sum_{n \in \mathbb{Z}} |\hat{f}(n)\hat{g}(n)|^2 \big)^2 &\leq&
+\sum_{n \in \mathbb{Z}} |\hat{f}(n)|^4 
+\sum_{n \in \mathbb{Z}} |\hat{g}(n)|^4. \\
 \eQe
-which holds by the Cauchy-Schwarz inequality on the inner product space of $l^2(\mathbb{T})$.
+Expanding the LHS of the desired inequality yields
+\eQb
+\big( \sum_{n \in \mathbb{Z}} |\hat{f}(n)\hat{g}(n)|^2 \big)^2 &=&
+\sum_{n \in \mathbb{Z}} |\hat{f}(n)\hat{g}(n)|^4 + 
+\sum_{n > m} 2|\hat{f}(n)\hat{f}(m)\hat{g}(n)\hat{g}(n)|^2 \\
+&\leq&
+\sum_{n \in \mathbb{Z}} |\hat{f}(n)\hat{g}(n)|^4 + 
+\sum_{n > m} |\hat{f}(n)\hat{g}(n)|^4 + |\hat{f}(m)\hat{g}(m)|^4 \\
+&=& \sum_{n \in \mathbb{Z}} |\hat{f}(n)|^4 
+\sum_{n \in \mathbb{Z}} |\hat{g}(n)|^4, \\
+\eQe
+where the last inequality
+holds by the Cauchy-Schwarz inequality on the inner product space of $l^2(\mathbb{T})$.
 
 \hfill $\qed$ 
 \end{solution}
