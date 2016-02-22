@@ -16,7 +16,8 @@
 \usepackage{subcaption}
 
 \def\eQb#1\eQe{\begin{eqnarray*}#1\end{eqnarray*}}
-\def\eQnb#1\eQne{\begin{eqnarray}#1\end{eqnarray}}
+\def\aB#1\aE{\begin{align*}#1\end{align*}}
+\def\eQnb#1\eQne{\begin{align}#1\end{align}}
 \providecommand{\e}[1]{\ensuremath{\times 10^{#1}}}
 \providecommand{\pb}[0]{\pagebreak}
 
@@ -202,11 +203,18 @@ By the definition of $n$th Fourier coefficient, we have
 \eQb
 \hat{K}_{N}(n) &=& \int_{\mathbb{T}} K_n(x)e(-nx) dx \\
 &=& \int_{\mathbb{T}} (\dfrac{1}{N} \sum_{k=0}^{N-1} D_k(x)) e(-nx) dx \\
-&=& \dfrac{1}{N} \sum_{k=0}^{N-1} \int_{\mathbb{T}} D_k(x) e(-nx) dx \\
-&=& \dfrac{1}{N} \sum_{k=0}^{N-1} \int_{\mathbb{T}} (\sum_{l=-k}^{k}e(lx))  e(-nx) dx \\
-&=& \dfrac{1}{N} \sum_{k=0}^{N-1} \sum_{l=-k-n}^{k-n} \int_{\mathbb{T}} e(lx) dx \\
-&=& \dfrac{1}{N} \sum_{k=0}^{N-1} \sum_{l=-k-n}^{k-n} 1 \\
+&=& \int_{\mathbb{T}} \dfrac{1}{N} \sum_{k=0}^{N-1} \sum_{|m| \leq k} e(mx) e(-nx) dx \\
+&=& \dfrac{1}{N} \sum_{k=0}^{N-1} \sum_{|m| \leq k} 
+\int_{\mathbb{T}} e((m-n)x) dx. \\
 \eQe
+Observe that the integral in the summation is $1$ if $m = n$ and $0$ otherwise. For $n \leq N$,
+we have $(N - |n|)$ terms in the sum where $m = n$ happens, for $n > N$, we have no such term, where 
+the equality holds. Therefore, it follows that
+\eQb
+\hat{K}_{N}(n) &=& \dfrac{1}{N}(N - |n|)^{+} \\
+&=& (1 - \dfrac{|n|}{N})^{+},
+\eQe
+which is precisely the given closed form formula for the kernel. \hfill $\qed$
 
 \bigskip
 
@@ -232,18 +240,33 @@ K_N(x) &=& \dfrac{1}{2N\sin(\pi x)^2}(2\sin(N\pi x)^2)\\
 \eQe
 as required. 
 
-\hfill $\qed$
-
 \bigskip
 
-\textbf{(1.18)} Fix $x \in \mathbb{T}$, and $N \in \mathbb{N}$. 
-As $\dfrac{1}{N} \geq 0$, and 
-$(\dfrac{\sin(N \pi x)}{\sin(\pi x)})^2 \geq 0$, it follows that
+\textbf{(1.18)} Fix $x \in \mathbb{T}$, and $N \in \mathbb{N}$. From $(1.17)$, it is
+clear that $0 \leq K_n(x)$. By the triangle inequality, and the result from the excercise $1.1$,
+it follows that
+\aB 
+K_N(x) &\leq \dfrac{1}{N} \sum_{n=0}^{N-1}| D_n(x) | \notag \\
+&\leq \dfrac{1}{N} \sum_{n=0}^{N-1} 2n + 1 = \dfrac{1}{N} (2\dfrac{N(N-1)}{2} + N) = N \notag  
+\aE
+Now, by the $(1.17)$ result, and the fact that $|\sin(x)| \leq 2|x|$ for $x \in [0,\dfrac{1}{2}]$,
+ we obtain
 \eQb
-0 &\leq& \dfrac{1}{N} \dfrac{\sin(N \pi x)}{\sin(\pi x)} \\
-&=& K_N(x). 
+K_N(x) &=& \dfrac{1}{N}(\dfrac{\sin(N \pi x)}{\sin(\pi x)})^2 \\
+&\leq& \dfrac{1}{N}(\dfrac{\sin(N \pi x)}{2x})^2 \\ 
+&\leq& \dfrac{1}{N} \cdot \dfrac{1}{4x^2} \leq \dfrac{1}{Nx^2}.
 \eQe
+Hence, we have shown that 
+\eQb
+0 &\leq& K_n(x) \leq \min(N, \dfrac{1}{Nx^2}),
+\eQe
+which is equivalent to
+\eQb
+0 &\leq& K_n(x) \leq N^{-1} \min(N^2,\dfrac{1}{x^2}),
+\eQe
+as required.
 
+\hfill $\qed$
 
 \end{solution}
 
@@ -258,26 +281,69 @@ $(\dfrac{\sin(N \pi x)}{\sin(\pi x)})^2 \geq 0$, it follows that
 \end{question}
 \begin{solution} \hfill \\
 \textbf{(a)} Let $0 \leq s \leq 1$, and $h = \tau_{-\theta}f$, where $\tau_{\theta}f(x)
-= f(x-z) $
+= f(x-\theta) $
 is the translation operator, parametrized by $\theta$. 
 By the Corollary $1.6$,
 and the linearity of integration, it follows that
 \eQb
 ||h - f||_2^2 &=& \sum_{-\infty}^{\infty} |\widehat{(h-f)}(n)|^2  \\
-&=& \sum_{-\infty}^{\infty} \hat{h}(n) - \hat{f}(n)|^2. 
+&=& \sum_{-\infty}^{\infty} |\hat{h}(n) - \hat{f}(n)|^2. 
 \eQe 
 Now, we have a particular relation between the Fourier transform 
 and translation as follows (pg. 4 in Schleg): 
 \eQb
-\widehat{{\tau}_{-\theta}f}(n) = e(\theta n)\hat{f}(n).
+\widehat{{\tau}_{-\theta}f}(n) = e(n \theta)\hat{f}(n).
 \eQe
 Hence, it follows that
 \eQb
-|| h - f||_{2}
-\eQe 
+|| h - f||_{2}^2 &=&  \sum_{-\infty}^{\infty} |e(n \theta) \hat{f}(n) - \hat{f}(n)|^2 \\
+&=& \sum_{-\infty}^{\infty} |e(n \theta) - 1|^2 |\hat{f}(n)|^2 \\
+\eQe
+Recall that $\theta \in [0,1)$ and $0 \leq s \leq 1$. For $|n \theta| \geq 1$, we have
+\eQb
+|e(n \theta ) - 1|^2 &\leq& 4 \leq  4\pi^2 |n|^{2s} |\theta|^{2s}. \\ 
+\eQe
+Now, when $|n \theta | <1$, by rudimentary trig identities, we obtain 
+\eQb
+|e(n \theta ) - 1|^2 &\leq& (\cos(2\pi n \theta)^2 -1)^2 + \sin(2\pi n \theta)^2 \\
+&=& 2 - 2\cos(2\pi n \theta) =  4\sin^2(\pi n \theta) \\ 
+&\leq& 4\pi^2 n^{2} |\theta|^2 \leq  4\pi^2 |n|^{2s} |\theta|^{2s}. 
+\eQe
+
+\pagebreak
+
+Hence, we have shown
+$|e(n \theta ) - 1|^2 \leq  4\pi^2 |n|^{2s} |\theta|^{2s}$.  
+Plugging the above inequality into the two norm inequality above gives
+\eQb
+|| h - f||_{2}^2 &\leq&  
+4\pi^2 \big( \sum_{-\infty}^{\infty} n^2 \hat{f}(n)|^2 \big) |\theta|^{2s}\\
+&\leq& 4\pi^2 ||f||_{H^s(\mathbb{T})}^2 |\theta|^{2s},
+\eQe
+and consequently,
+\eQb 
+||h - f||_2 &\leq& 2\pi ||f||_{H^s(\mathbb{T})}|\theta|^{s},
+\eQe
+as required.
+
 \bigskip
 
-\textbf{(b)}
+\textbf{(b)} Fix $s > 0$. By definition of $S_N f$, and the given, we have
+\eQb
+||S_N f - f||_{2}^{2} = \sum_{|n| > N} |\hat{f}(n)|^2
+ &\text{and }& \> ||f||_{L^2} \leq ||f||_{H^s} \leq 1
+\eQe
+With the given norm, it follows that
+\eQb
+1 &\geq& ||f||_{H^s} \\
+&\geq& \sum_{|n| > N} (N+1)^{2s}|\hat{f}(n)|^2 = (N+1)^{2s} ||S_N f - f||_{2}^{2},\\
+\eQe
+which can be simplified to  
+\eQb
+||S_N f - f||_{2} &\leq& \dfrac{1}{(N+1)^{2s}}, 
+\eQe
+which reveals the rate of convergence as required.
+\hfill $\qed$
 \end{solution}
 
 \newpage
@@ -290,6 +356,12 @@ Hence, it follows that
 \end{figure}
 \end{question}
 \begin{solution}
+Let $p \geq 1$. Observe that for $x \in [0,1)$, we have $|x| \leq |x|^p$. Hence, it follows that
+\eQb
+0 \leq \int_{\mathbb{T}} |S_nf - g| \leq \int_{\mathbb{T}} |S_n f - g|^p. 
+\eQe
+As we are given that $\int_{\mathbb{T}} |S_n f - g|^p \to 0$ as $n \to \infty$
+it follows that $\int_{\mathbb{T}} |S_n f - g| \to 0$ in $L^1(\mathbb{T})$.  
 \end{solution}
 
 \bigskip
