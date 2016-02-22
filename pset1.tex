@@ -181,15 +181,57 @@ theorem (Rudin pg.121), there exists $f \in L_1(\mathbb{T})$ such that $u(dx) = 
 where $dx$ is the Lebesgue measure, restricted to Borel sets of $\mathbb{T}$. Let $f$ be
 such function in $L_1(\mathbb{T})$. As 
 $u(dx) = f(x)dx$, it follows that $\hat{u}(n) = \hat{f}(n)$, thus $\sum_{n \mathbb{Z}} 
-|\hat{f}(n)| < \infty$. We claim that $f$ is continuous. Fix $\epsilon > 0$. Hence,
-this show that $f \in \mathbb{C}(\mathbb{T})$ as desired. This shows that
-$\mathbb{A}(\mathbb{T})$ is an algebra under multiplication. 
-\eQb
-fg &\sim& \sum_{n = -\infty}^{\infty} \sum_{m \in \mathbb{Z}} \hat{f}(m) \hat{g}(n-m) e(nx)   
-\eQe
+|\hat{f}(n)| < \infty$. Recall that an uniform limit of continuous functions is continuous.
+As we have that $\{S_n f\}$ is a sequence of continuous functions, and that the tail
+$(|n| > M)$ terms can be arbitrarily bounded by a sufficiently large $M$ by the assumption,
+we have that $\{S_n f \}$ is Cauchy in $C(\mathbb{T})$. By completeness of $C(\mathbb{T})$ 
+$\{S_n f\}$ converges and by problem 1.1, know have that $\{S_n f \}$ converges uniformly to
+$f$. Therefore, $f \in C(\mathbb{T})$.
 
-Let $f,g \in L^{2}(\mathbb{T})$. 
-\newpage
+\smallskip
+
+Let $f,g \in A(\mathbb{T})$. By linearity of integration and the triangle inequality, it follows that
+\eQb
+\sum_{n \in \mathbb{Z}} |\widehat{f+g}(n)| \leq \sum_{n \in \mathbb{Z}} |\hat{f}(n)|
++ \sum_{n \in \mathbb{Z}} |\hat{g}(n)| < \infty.
+\eQe
+Therefore, $f+g \in A(\mathbb{T})$. Let $\alpha \in \mathbb{C}$ and $f \in A(\mathbb{T})$. It follows
+that
+\eQb
+\sum_{n \in \mathbb{Z}} |\alpha \hat{f}(n)| \leq |\alpha| 
+\sum_{n \in \mathbb{Z}} |\hat{f}(n)| < \infty.
+\eQe
+Therefore, $\alpha f \in A(\mathbb{T})$. So far, we have shown that $A(\mathbb{T})$ is a linear space.
+
+\pagebreak
+
+Let $f,g \in A(\mathbb{T})$. It follows that 
+\eQb
+fg &=& \big( \sum_{i \in \mathbb{Z}} \hat{f}(i)e(ix) \big) 
+\big( \sum_{k \in \mathbb{Z}} \hat{g}(k)e(kx) \big)
+= \sum_{n \in \mathbb{Z}} \sum_{i + k =  n} \hat{f}(i)\hat{g}(k)e(nx) \\ 
+&=& \sum_{m \in \mathbb{Z}} \sum_{n \in \mathbb{Z}} \hat{f}(m)\hat{g}(n-m)e(nx)  
+\eQe
+From the above equality and uniform convergence, we can further deduce that
+\eQb
+\hat{fg}(n) &=& \sum_{m \in \mathbb{Z}} \hat{f}(m)\hat{g}(m-n),
+\eQe
+and consequently
+\eQb
+\sum_{n \in \mathbb{Z}} |\hat{fg}(n)| \leq \sum_{n \in \mathbb{Z}} |\hat{f}(n)|
+\sum_{m \in \mathbb{Z}} |\hat{g}(m)| < \infty. 
+\eQe
+Therefore, $fg \in A(\mathbb{T})$. This shows that
+$\mathbb{A}(\mathbb{T})$ is an algebra under multiplication. For the remaining part, it follows that
+\eQb
+||fg||_{A} &=& ||\hat{fg}||_{l_1} \leq \sum_{n \in \mathbb{Z}} |\hat{f}(n)| \sum_{m \in \mathbb{Z}}
+|\hat{g}(m)| = ||f||_{A} ||g||_{A}
+\eQe
+If $f,g \in L^2(\mathbb{T})$, we have that $\sum |\hat{f}(n)|^2 , \sum |\hat{f}(n)|^2 < \infty$. 
+Hence, by the established inequality, it follows that $f * g \in A(\mathbb{T})$.
+ 
+
+\bigskip
 
 \begin{question}[3]
 \hfill
@@ -360,7 +402,18 @@ Let $p \geq 1$. Observe that for $x \in [0,1)$, we have $|x| \leq |x|^p$. Hence,
 0 \leq \int_{\mathbb{T}} |S_nf - g| \leq \int_{\mathbb{T}} |S_n f - g|^p. 
 \eQe
 As we are given that $\int_{\mathbb{T}} |S_n f - g|^p \to 0$ as $n \to \infty$
-it follows that $\int_{\mathbb{T}} |S_n f - g| \to 0$ in $L^1(\mathbb{T})$.  
+it follows that $\int_{\mathbb{T}} |S_n f - g| \to 0$ in $L^1(\mathbb{T})$. Now, from the triangle
+inequality of $L_1$, we have that
+\eQb
+|f-g|_{L_1} \leq |f - \sigma_n f|_{L_1} + |\sigma_n f - g|_{L_1}.
+\eQe  
+Recall that convergence of cesaro sum is more inclusive, thus implied by the convergence
+of the original sequence.
+Hence, as $|S_n f - g|$ goes to $0$, we have $|\sigma_ f - g|$ going to $0$ as $n \to \infty$. Hence,
+it follows that $|f - g|_{L_1}$ = 0, which implies that $f=g$ almost everywhere. For the case when
+$p = \infty$, as we have $\{ S_n f\}$ is a sequence of continuous function, by the convergence in
+supnorm, we have $g$ is continuous. 
+\hfill $\qed$
 \end{solution}
 
 \bigskip
