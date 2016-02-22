@@ -81,28 +81,29 @@ of Harmonic Analysis 2016 at Courant Institute of Mathematical Sciences.
 \hfill
 \begin{figure}[h!]
   \centering
-    \includegraphics[width=1\textwidth]{HA-1-1.png}
+    \includegraphics[width=0.8\textwidth]{HA-1-1.png}
 \end{figure}
 \end{question}
 
-\pagebreak
- 
 \begin{solution}
 We first verify that the given closed form formula for the Dirichlet Kernel $D_n$. Fix 
 $x \in \mathbb{T}$ and $N \in \mathbb{N}$. 
 From the sum formula for geometric series, and the Euler's identity $
 \sin(2\pi nx) = \dfrac{e(-nx) + e(nx)}{2i}$, it follows that 
 
+
 \eQb
-D_{n}(x) &=& \sum_{n=-N}^{N} e(nx) \\
-&=& e(-Nx) \sum_{n=0}^{2N} e(nx) \\
-&=& e(-Nx) \dfrac{1 - e((2N+1)x)}{1 - e(x)} \\
-&=& \dfrac{e(-Nx) - e((N+1)x)}{1-e(x)} \\
-&=& \dfrac{e(-(N+\frac{1}{2})x - e((N+\frac{1}{2})x)}{e(-\frac{1}{2}x) - e(\frac{1}{2}x)} \\
-&=& \dfrac{\sin(2\pi(N+\frac{1}{2})x)}{\sin(2\pi(\frac{1}{2})x)} =
- \dfrac{\sin(2(N+1)\pi x)}{\sin(\pi x)},
+D_{n}(x) &=& \sum_{n=-N}^{N} e(nx) = e(-Nx) \sum_{n=0}^{2N} e(nx) \\
+&=& e(-Nx) \dfrac{1 - e((2N+1)x)}{1 - e(x)} = \dfrac{e(-Nx) - e((N+1)x)}{1-e(x)} \\
+&=& \dfrac{e(-(N+\frac{1}{2})x - e((N+\frac{1}{2})x)}{e(-\frac{1}{2}x) - e(\frac{1}{2}x)} 
+= \dfrac{\sin(2\pi(N+\frac{1}{2})x)}{\sin(2\pi(\frac{1}{2})x)} =
+\dfrac{\sin(2(N+1)\pi x)}{\sin(\pi x)},
 \eQe
-as required. The graphs of $D_2$ and $D_5$ are attached below. The blue graph
+as required.
+
+\pagebreak
+
+ The graphs of $D_2$ and $D_5$ are attached below. The blue graph
 corresponds to $D_2$ and the green corresponds to $D_5$.
 \begin{figure}[!ht]
   \caption{The graph of $D_n$ for $n=2,5$}
@@ -119,42 +120,32 @@ $n \in \mathbb{Z}_{+}$. By the triangle inequality, we have
 &\leq& \sum_{k=-N}^{N} \left| e(nx) \right| = 2N + 1 \leq 3N. \\ 
 \eQe
 
-As $x \in [-\dfrac{1}{2},\dfrac{1}{2}]$, it follows that $|\sin(\pi x)| \geq |x|$.
-Now, observe that
+For $ x \in (0,\dfrac{1}{2}]$, we have $2x \leq \sin(\pi x)$. Hence, 
 \eQb
 \left| D_n(x) \right| 
-&=& \left| \dfrac{\sin((2N+1)\pi x}{\sin(\pi x)} \right| \\
-&=& \dfrac{| \sin((2N+1)\pi x| }{ | \sin(\pi x)| } \\
-&\leq&  \dfrac{|\sin((2N+1)\pi x)|}{|x|} \\
-&\leq& \dfrac{1}{|x|}.
+&=& \left| \dfrac{\sin((2N+1)\pi x}{\sin(\pi x)} \right| = 
+ \dfrac{| \sin((2N+1)\pi x| }{ | \sin(\pi x)| } \\
+&\leq&  \dfrac{|\sin((2N+1)\pi x)|}{2|x|} \leq \dfrac{1}{2|x|}.
 \eQe
-Hence, we have proven the bound
+Therefore, we obtain that
 \eQb
-|D_N(x)| &\leq& C\min(N,\dfrac{1}{|x|}). \\
+|D_N(x)| &\leq& 3\min(N,\dfrac{1}{|x|}). \\
 \eQe
 
 \smallskip
 
-From the above bound, we obtain that $|D_n(x)| \leq C\dfrac{1}{|x|}$ 
-for all $x \in \mathbb{T}$ and
-$n \geq 2$ with some absolute constant $C$. 
-By monotonicity of Lebesgue integration, it follows that
+Now, using the monotonicity of Lebesgue integration and additivity over domain gies 
 \eQb
-||D_N ||_{L^{1}(\mathbb{T})} &=& \int_{\mathbb{T}} |D_n(x)| dx \\ 
-&\leq& \int_{\mathbb{T}} C\min(N,\dfrac{1}{|x|}) dx \\
-&\leq& 2C(\int_{0}^{\frac{1}{N}} \dfrac{1}{N} dx
+||D_N ||_{L^{1}(\mathbb{T})} &=& \int_{\mathbb{T}} |D_n(x)| dx \leq
+ \int_{\mathbb{T}} 3\min(N,\dfrac{1}{|x|}) dx \\
+&=& 6\int_{0}^{\frac{1}{2}} \min(N,\dfrac{1}{|x|}) dx = 6(\int_{0}^{\frac{1}{N}} N dx
 + \int_{\frac{1}{N}}^{\frac{1}{2}}\dfrac{1}{|x|} dx) \\
-&=& 2C(1+ \log(|\dfrac{1}{2}|) - \log(|\dfrac{1}{N}|)) \\ 
-&=& log(10^{2C}) + \log(\frac{1}{2}^{2C}) + log(N)) \\
-&=& log(5^{2c} N) \\
+&=& 6 + 6(\log(\dfrac{1}{2}) - \log(\dfrac{1}{N}) = 6 + 6\log(\dfrac{1}{2}) + 6\log(N) \leq C_1log(N),
 \eQe
+where a sufficiently large $C_1$, that satisfies the last inequality when $N = 2$. 
 Now, for the lower bound, we have
 \eQb
-||D_N ||_{L^{1}(\mathbb{T})} &=& \int_{\mathbb{T}} |D_n(x)| dx \\
-&=& \int_{-\frac{1}{2}}^{\frac{1}{2}} |D_n(x)| \\ 
-&\geq& \int_{1}^{N} \dfrac{|\sin(\pi x)|}{|\pi x|} dx \\
-&=& \sum_{k=1}^{N-1} \int_{k}^{k+1} \dfrac{|\sin(\pi x)|}{|\pi x|}dx \\
-&\geq& \sum_{k=1}^{N-1} \dfrac{1}{k} \\
+||D_N ||_{L^{1}(\mathbb{T})} &=& \int_{\mathbb{T}} |D_n(x)| dx \leq
 \eQe
  
 \end{solution}
@@ -199,20 +190,19 @@ Let $f,g \in L^{2}(\mathbb{T})$.
 \smallskip
 
 \textbf{(1.16)} 
-By the definition of $n$th Fourier coefficient, we have
+From definition of $n$th Fourier coefficient, we obtain
 \eQb
-\hat{K}_{N}(n) &=& \int_{\mathbb{T}} K_n(x)e(-nx) dx \\
-&=& \int_{\mathbb{T}} (\dfrac{1}{N} \sum_{k=0}^{N-1} D_k(x)) e(-nx) dx \\
-&=& \int_{\mathbb{T}} \dfrac{1}{N} \sum_{k=0}^{N-1} \sum_{|m| \leq k} e(mx) e(-nx) dx \\
-&=& \dfrac{1}{N} \sum_{k=0}^{N-1} \sum_{|m| \leq k} 
+\hat{K}_{N}(n) &=& \int_{\mathbb{T}} K_n(x)e(-nx) dx 
+= \int_{\mathbb{T}} (\dfrac{1}{N} \sum_{k=0}^{N-1} D_k(x)) e(-nx) dx \\
+&=& \int_{\mathbb{T}} \dfrac{1}{N} \sum_{k=0}^{N-1} \sum_{|m| \leq k} e(mx) e(-nx) dx 
+= \dfrac{1}{N} \sum_{k=0}^{N-1} \sum_{|m| \leq k} 
 \int_{\mathbb{T}} e((m-n)x) dx. \\
 \eQe
 Observe that the integral in the summation is $1$ if $m = n$ and $0$ otherwise. For $n \leq N$,
 we have $(N - |n|)$ terms in the sum where $m = n$ happens, for $n > N$, we have no such term, where 
 the equality holds. Therefore, it follows that
 \eQb
-\hat{K}_{N}(n) &=& \dfrac{1}{N}(N - |n|)^{+} \\
-&=& (1 - \dfrac{|n|}{N})^{+},
+\hat{K}_{N}(n) &=& \dfrac{1}{N}(N - |n|)^{+} = (1 - \dfrac{|n|}{N})^{+},
 \eQe
 which is precisely the given closed form formula for the kernel. \hfill $\qed$
 
@@ -222,8 +212,8 @@ which is precisely the given closed form formula for the kernel. \hfill $\qed$
 Fix $x \in \mathbb{T}$, and $N \in \mathbb{N}$.
 Now, by definition of Fejer Kernel, we have
 \eQb
-K_N(x) &=& \dfrac{1}{N} \sum_{n=0}^{N-1} D_n(x) \\
-&=& \dfrac{1}{N} \sum_{n=0}^{N-1} \dfrac{\sin((2n+1)\pi x)}{\sin(\pi x)} \\
+K_N(x) &=& \dfrac{1}{N} \sum_{n=0}^{N-1} D_n(x) 
+= \dfrac{1}{N} \sum_{n=0}^{N-1} \dfrac{\sin((2n+1)\pi x)}{\sin(\pi x)} \\
 &=& \dfrac{1}{N\sin(\pi x)^2}\sum_{n=0}^{N-1} \sin((2n+1)\pi x)\sin(\pi x). \\
 \eQe
 By the use of the trig identity, $\sin(a)\sin(b) = \dfrac{1}{2}\cos(a-b) - \cos(a+b)$, and
@@ -235,8 +225,8 @@ K_N(x) &=& \dfrac{1}{2N\sin(\pi x)^2}\sum_{n=0}^{N-1}
 \eQe
 Lastly, from the trig identity, $2\sin(a)^2 = 1 - \cos(2a)$, we finally obtain that
 \eQb
-K_N(x) &=& \dfrac{1}{2N\sin(\pi x)^2}(2\sin(N\pi x)^2)\\
-&=& \dfrac{1}{N}(\dfrac{\sin(N\pi x)}{\sin(\pi x)})^2,
+K_N(x) &=& \dfrac{1}{2N\sin(\pi x)^2}(2\sin(N\pi x)^2)
+= \dfrac{1}{N}(\dfrac{\sin(N\pi x)}{\sin(\pi x)})^2,
 \eQe
 as required. 
 
@@ -246,21 +236,17 @@ as required.
 clear that $0 \leq K_n(x)$. By the triangle inequality, and the result from the excercise $1.1$,
 it follows that
 \aB 
-K_N(x) &\leq \dfrac{1}{N} \sum_{n=0}^{N-1}| D_n(x) | \notag \\
-&\leq \dfrac{1}{N} \sum_{n=0}^{N-1} 2n + 1 = \dfrac{1}{N} (2\dfrac{N(N-1)}{2} + N) = N \notag  
+K_N(x) &\leq \dfrac{1}{N} \sum_{n=0}^{N-1}| D_n(x) | 
+\leq \dfrac{1}{N} \sum_{n=0}^{N-1} 2n + 1 = \dfrac{1}{N} (2\dfrac{N(N-1)}{2} + N) = N \notag  
 \aE
 Now, by the $(1.17)$ result, and the fact that $|\sin(x)| \leq 2|x|$ for $x \in [0,\dfrac{1}{2}]$,
  we obtain
 \eQb
-K_N(x) &=& \dfrac{1}{N}(\dfrac{\sin(N \pi x)}{\sin(\pi x)})^2 \\
-&\leq& \dfrac{1}{N}(\dfrac{\sin(N \pi x)}{2x})^2 \\ 
-&\leq& \dfrac{1}{N} \cdot \dfrac{1}{4x^2} \leq \dfrac{1}{Nx^2}.
+K_N(x) &=& \dfrac{1}{N}(\dfrac{\sin(N \pi x)}{\sin(\pi x)})^2 
+\leq \dfrac{1}{N}(\dfrac{\sin(N \pi x)}{2x})^2  
+\leq \dfrac{1}{N} \cdot \dfrac{1}{4x^2} \leq \dfrac{1}{Nx^2}.
 \eQe
 Hence, we have shown that 
-\eQb
-0 &\leq& K_n(x) \leq \min(N, \dfrac{1}{Nx^2}),
-\eQe
-which is equivalent to
 \eQb
 0 &\leq& K_n(x) \leq N^{-1} \min(N^2,\dfrac{1}{x^2}),
 \eQe
