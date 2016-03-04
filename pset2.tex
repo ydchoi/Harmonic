@@ -98,6 +98,23 @@ of Harmonic Analysis 2016 at Courant Institute of Mathematical Sciences.
 \end{figure}
 \end{question}
 \begin{solution}
+Define $g_{n,m} =
+ \sum_{i = n}^{m} \dfrac{\sin(2\pi n x)}{n\log(n)}$. 
+For $x \in [0,\dfrac{1}{m}]$, we have
+\eQb
+|g_{n,m}| &\leq& 
+\sum_{i = n}^{m} \left| \dfrac{\sin(2\pi i x)}{i\log(i)} \right| 
+\leq \sum_{i=n}^{m} \dfrac{2\pi i x}{i \log(i)} = \sum_{i=n}^{m} \dfrac{2 \pi x}{\log(i)} \\
+&\leq& \dfrac{1}{\log(n)}  
+\leq \dfrac{1}{m\log(n)} \sum_{i = n}^{m}{2\pi} \leq \dfrac{2\pi}{\log(n)}.  \\
+\eQe
+For $x \in [\dfrac{1}{m}, \dfrac{1}{n}]$, we obtain 
+
+Therefore, we have that 
+\eQb
+|g_{n,m}| = O(\dfrac{1}{log(n)}),
+\eQe
+and the partial sums of $f_S$ is cauchy. Thus, $f_S$ converges uniformly and $f \in C(\mathbb{T})$.
 
 \end{solution}
 
@@ -111,6 +128,21 @@ of Harmonic Analysis 2016 at Courant Institute of Mathematical Sciences.
 \end{figure}
 \end{question}
 \begin{solution} 
+By the triangle inequality of the supnorm, we have
+\eQb
+||S_N f - f ||_{\infty} \leq ||S_N f - \sigma_N f ||_{\infty} + 
+||\sigma_N f - f||_{\infty},
+\eQe
+for all $N \in \mathbb{Z}^{+}$. As $f \in C(T)$, we have that 
+$||\sigma_N f - f||_{\infty} \to 0$ as $N \to \infty$.
+Therefore, by the linearity of limit, 
+it suffices to show that $||S_n f - \sigma f||_{\infty} \to 0$ as $n \to \infty$. 
+By definition of $S_N$ and $\sigma_N$, 
+\eQb
+||S_N f - \sigma_N f|| = \sum_{n = -N}^{N}  
+\eQe
+As $f \in H^{\frac{1}{2}}(\mathbb{T})$, it follows that
+Hence, we have that 
 
 \end{solution}
 
