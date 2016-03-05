@@ -169,7 +169,38 @@ Hence, we have shown that $||S_N f - \sigma_N f||_{\infty} \to 0$ as $N \to \inf
 \end{question}
 \begin{solution} \hfill \\
 A theorem that gives this result of $f \in C^{\alpha}(\mathbb{T})
-\implies \hat{f}(n) = O(n^{-\alpha})$ is recorded in section $1.4.4$, pg.18 of Schleg. 
+\implies \hat{f}(n) = O(n^{-\alpha})$ is recorded in section $1.4.4$, pg.18 of Schleg.
+
+\bigskip
+The following is the proof of the problem $1.9$ 
+from Schleg. 
+As we have $f,g \in L^2(\mathbb{T})$, by Corollary $1.6$, the given inequality is equivalent to
+\eQb
+\sum_{n \in \mathbb{Z}} |\widehat{f * g}(n)|^2 &\leq&
+\sqrt{\sum_{n \in \mathbb{Z}} |\widehat{f * f}(n)|^2}  
+\sqrt{\sum_{n \in \mathbb{Z}} |\widehat{g * g}(n)|^2}. \\
+\eQe
+Since $\widehat{f*g}(n) = \hat{f}(n)\hat{g}(n)$, the above inequality is again equivalent to
+\eQb
+\big( \sum_{n \in \mathbb{Z}} |\hat{f}(n)\hat{g}(n)|^2 \big)^2 &\leq&
+\sum_{n \in \mathbb{Z}} |\hat{f}(n)|^4 
+\sum_{n \in \mathbb{Z}} |\hat{g}(n)|^4. \\
+\eQe
+Expanding the LHS of the desired inequality yields
+\eQb
+\big( \sum_{n \in \mathbb{Z}} |\hat{f}(n)\hat{g}(n)|^2 \big)^2 &=&
+\sum_{n \in \mathbb{Z}} |\hat{f}(n)\hat{g}(n)|^4 + 
+\sum_{n > m} 2|\hat{f}(n)\hat{f}(m)\hat{g}(n)\hat{g}(n)|^2 \\
+&\leq&
+\sum_{n \in \mathbb{Z}} |\hat{f}(n)\hat{g}(n)|^4 + 
+\sum_{n > m} |\hat{f}(n)\hat{g}(n)|^4 + |\hat{f}(m)\hat{g}(m)|^4 \\
+&=& \sum_{n \in \mathbb{Z}} |\hat{f}(n)|^4 
+\sum_{n \in \mathbb{Z}} |\hat{g}(n)|^4, \\
+\eQe
+where the last inequality
+holds by the Cauchy-Schwarz inequality on the inner product space of $l^2(\mathbb{T})$.
+
+ 
 \hfill $\qed$
 \end{solution}
 
