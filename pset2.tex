@@ -133,17 +133,29 @@ By the triangle inequality of the supnorm, we have
 ||S_N f - f ||_{\infty} \leq ||S_N f - \sigma_N f ||_{\infty} + 
 ||\sigma_N f - f||_{\infty},
 \eQe
-for all $N \in \mathbb{Z}^{+}$. As $f \in C(T)$, we have that 
+for all $N \in \mathbb{Z}^{+}$. As $f \in C(\mathbb{T})$, we have that 
 $||\sigma_N f - f||_{\infty} \to 0$ as $N \to \infty$.
 Therefore, by the linearity of limit, 
-it suffices to show that $||S_n f - \sigma f||_{\infty} \to 0$ as $n \to \infty$. 
-By definition of $S_N$ and $\sigma_N$, 
+it suffices to show that $||S_N f - \sigma_N f||_{\infty} \to 0$ as $N \to \infty$. 
+By definition of $S_N$ and $\sigma_N$, triangle inequality, and Cauchy-Schwarz, we obtain 
 \eQb
-||S_N f - \sigma_N f|| = \sum_{n = -N}^{N}  
+||S_N f - \sigma_N f||_{\infty} =  &\leq& \sum_{n = -N}^{N} \dfrac{|n|}{N}|\hat{f}(n)| \\
+&\leq& \sum_{n=-M}^{M} \dfrac{|n||\hat{f}(n)|}{N} + (\sum_{N \geq |n| > M} \dfrac{|n|}{N^2})^{\frac{1}{2}}
+(\sum_{N \geq |n| > M}|n||\hat{f}(n)|^2)^{\frac{1}{2}}, \\ 
+&\leq& \sum_{n=-M}^{M} \dfrac{|n||\hat{f}(n)|}{N} + 
+2(\sum_{N \geq |n| > M}|n||\hat{f}(n)|^2)^{\frac{1}{2}}, \\ 
 \eQe
-As $f \in H^{\frac{1}{2}}(\mathbb{T})$, it follows that
-Hence, we have that 
-
+for any $N > M$. Taking $\limsup$ with respect to $N$ on both sides, we get
+\eQb
+\limsup_{N \to \infty} ||S_N f - \sigma_N f||_{\infty} &\leq&
+2(\sum_{|n| > M}|n||\hat{f}(n)|^2)^{\frac{1}{2}}, \\ 
+\eQe
+As $f \in H^{\frac{1}{2}}(\mathbb{T})$, taking the limit as $M \to \infty$ gives
+\eQb
+\limsup_{N \to \infty} ||S_N f - \sigma_N f||_{\infty} &\leq& 0
+\eQe
+Hence, we have shown that $||S_N f - \sigma_N f||_{\infty} \to 0$ as $N \to \infty$ as desired. 
+\hfill $\qed$
 \end{solution}
 
 \newpage
@@ -156,6 +168,8 @@ Hence, we have that
 \end{figure}
 \end{question}
 \begin{solution} \hfill \\
+A theorem that gives this result of $f \in C^{\alpha}(\mathbb{T})
+\implies \hat{f}(n) = O(n^{-\alpha})$ is recorded in section $1.4.4$, pg.18 of Schleg. 
 \hfill $\qed$
 \end{solution}
 
