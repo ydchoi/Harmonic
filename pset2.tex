@@ -135,7 +135,7 @@ By the triangle inequality of the supnorm, we have
 \eQe
 for all $N \in \mathbb{Z}^{+}$. As $f \in C(\mathbb{T})$, we have that 
 $||\sigma_N f - f||_{\infty} \to 0$ as $N \to \infty$.
-Therefore, by the linearity of limit, 
+Therefore, 
 it suffices to show that $||S_N f - \sigma_N f||_{\infty} \to 0$ as $N \to \infty$. 
 By definition of $S_N$ and $\sigma_N$, triangle inequality, and Cauchy-Schwarz, we obtain 
 \eQb
@@ -150,7 +150,7 @@ for any $N > M$. Taking $\limsup$ with respect to $N$ on both sides, we get
 \limsup_{N \to \infty} ||S_N f - \sigma_N f||_{\infty} &\leq&
 2(\sum_{|n| > M}|n||\hat{f}(n)|^2)^{\frac{1}{2}}, \\ 
 \eQe
-As $f \in H^{\frac{1}{2}}(\mathbb{T})$, taking the limit as $M \to \infty$ gives
+for any $M$. As $f \in H^{\frac{1}{2}}(\mathbb{T})$, taking the limit as $M \to \infty$ gives
 \eQb
 \limsup_{N \to \infty} ||S_N f - \sigma_N f||_{\infty} &\leq& 0
 \eQe
@@ -172,39 +172,47 @@ A theorem that gives this result of $f \in C^{\alpha}(\mathbb{T})
 \implies \hat{f}(n) = O(n^{-\alpha})$ is recorded in section $1.4.4$, pg.18 of Schleg.
 
 \bigskip
-The following is the proof of the problem $1.9$ 
-from Schleg. 
-As we have $f,g \in L^2(\mathbb{T})$, by Corollary $1.6$, the given inequality is equivalent to
+
+Now, we show that the exponent in the decay estimate
+cannot be improved. We first show that $F \in 
+C^{\alpha}(\mathbb{T})$. Fix $x,y \in \mathbb{T}$, such that $x \neq y$. Choose $K \in 
+\mathbb{N}$ such that
+$3^{-K-1} < |x - y| \leq 3^{-K}$. In particular, observe that, 
+with this choice of $K$, we have $1 < 3^{K+1}|x-y| < 3$. 
+It follows that
 \eQb
-\sum_{n \in \mathbb{Z}} |\widehat{f * g}(n)|^2 &\leq&
-\sqrt{\sum_{n \in \mathbb{Z}} |\widehat{f * f}(n)|^2}  
-\sqrt{\sum_{n \in \mathbb{Z}} |\widehat{g * g}(n)|^2}. \\
-\eQe
-Since $\widehat{f*g}(n) = \hat{f}(n)\hat{g}(n)$, the above inequality is again equivalent to
-\eQb
-\big( \sum_{n \in \mathbb{Z}} |\hat{f}(n)\hat{g}(n)|^2 \big)^2 &\leq&
-\sum_{n \in \mathbb{Z}} |\hat{f}(n)|^4 
-\sum_{n \in \mathbb{Z}} |\hat{g}(n)|^4. \\
-\eQe
-Expanding the LHS of the desired inequality yields
-\eQb
-\big( \sum_{n \in \mathbb{Z}} |\hat{f}(n)\hat{g}(n)|^2 \big)^2 &=&
-\sum_{n \in \mathbb{Z}} |\hat{f}(n)\hat{g}(n)|^4 + 
-\sum_{n > m} 2|\hat{f}(n)\hat{f}(m)\hat{g}(n)\hat{g}(n)|^2 \\
+\dfrac{|F(x) - F(y)|}{|x-y|^{\alpha}} &\leq& 
+\sum_{m=1}^{K} \dfrac{|\cos(2\pi3^m x) - 
+\cos(2\pi 3^m y)|}{3^{m\alpha} |x-y|^{\alpha}} +
+\sum_{m=K+1}^{\infty} \dfrac{|\cos(2\pi3^m x) - 
+\cos(2\pi 3^m y)|}{3^{m\alpha} |x-y|^{\alpha}} \\
+&\leq& 
+\sum_{m=1}^{K} \dfrac{2\pi3^m|x-y|}{3^{m\alpha} |x-y|^{\alpha}} +
+\sum_{m=K+1}^{\infty} \dfrac{2}{3^{m\alpha} |x-y|^{\alpha}} \\
+&=& 
+2\pi \sum_{m=1}^{K} 
+(3^{m}|x-y|)^{1-\alpha} 
++
+\sum_{m=K+1}^{\infty} 2 
+((3^{m}|x-y|)^{-\alpha} 
+ \\  
+&\leq& 
+2\sum_{m=0}^{\infty} 3^{-\alpha m} \\ 
 &\leq&
-\sum_{n \in \mathbb{Z}} |\hat{f}(n)\hat{g}(n)|^4 + 
-\sum_{n > m} |\hat{f}(n)\hat{g}(n)|^4 + |\hat{f}(m)\hat{g}(m)|^4 \\
-&=& \sum_{n \in \mathbb{Z}} |\hat{f}(n)|^4 
-\sum_{n \in \mathbb{Z}} |\hat{g}(n)|^4, \\
-\eQe
-where the last inequality
-holds by the Cauchy-Schwarz inequality on the inner product space of $l^2(\mathbb{T})$.
+\dfrac{2}{1- 3^{-\alpha}} \\ 
+\eQe 
+
+
+
+\bigskip
+
+
 
  
 \hfill $\qed$
 \end{solution}
 
-\bigskip
+\newpage
 
 \begin{question}[5]
 \hfill
@@ -214,7 +222,50 @@ holds by the Cauchy-Schwarz inequality on the inner product space of $l^2(\mathb
 \end{figure}
 \end{question}
 \begin{solution}
+Since $S_n f $ is continuous, and uniform limit of a continuous function is continuous, we
+have $U(\mathbb{T}) \subset C(\mathbb{T})$. We have previously shown that if $f \in A(\mathbb{T})$,
+then $\{S_n f \}$ converges uniformly. This gives $A(\mathbb{T}) \subset U(\mathbb{T})$. As $\frac{2}{3}
+> \frac{1}{2}$, the theorem $1.13$ from Schlag 
+gives $C^{\frac{2}{3}}(\mathbb{T}) \subset H^{\frac{1}{2}}(\mathbb{T})$.
+
+
+Now, from corollary $1.10$ from Schlag,
+gives a function $g \in C(\mathbb{T})$ such that $g \not\in U(\mathbb{T})$. Hence,
+$ C(\mathbb{T}) \setminus U(\mathbb{T}) \neq \emptyset$
+ 
+In problem $2$, we have shown that $f_s \notin A(\mathbb{T})$, but $f_s \in U(\mathbb{T})$. Therefore,
+$U(\mathbb{T}) \setminus A(\mathbb{T}) \neq \emptyset$. Now, take any $\dfrac{2}{3} >\alpha > \dfrac{1}{2}$,
+and consider $F_{\alpha}$ from the problem $4$, parametrized by $\alpha$. It follows that $F_{\alpha}
+\in A(\mathbb{T})$, and $F_{\alpha} \not\in C^{\frac{2}{3}}(\mathbb{T})$. Therefore, we have 
+$A(\mathbb{T}) \setminus C^{\frac{2}{3}}(\mathbb{T}) \neq \emptyset$, and $F_{\frac{2}{3}} \in C^{\frac{2}{3}}
+(\mathbb{T})$. Recapping the information we have
+gathered so far gives the following figure:
+\begin{figure}[!ht]
+  \caption{Function spaces on $\mathbb{T}$}
+  \centering
+    \includegraphics[width=0.5\textwidth]{fspace-1}
+\end{figure}
+
+Now, recall that $f_s$ from the problem $2$ is in $H^{\frac{1}{2}}(\mathbb{T})$, but not even essentially
+bounded. Hence, $H^{\frac{1}{2}}(\mathbb{T}) \setminus C^{\frac{2}{3}}(\mathbb{T}) \neq \emptyset$. Now,
+by the problem $3$, we have that $H^{\frac{1}{2}}(\mathbb{T}) \cap C(\mathbb{T}) \subset U(\mathbb{T})$,
+and $f_s \in H^{\frac{1}{2}}(\mathbb{T}) \cap U(\mathbb{T})$. Recall that $F_{\alpha} \in H^{\frac{1}{2}}
+(\mathbb{T})$. Hence, by preposition $1.14$ from there exists a function $h$ on $\mathbb{T}$ such that 
+
+\newpage
+
+$h \in U(\mathbb{T}) \setminus A(\mathbb{T})$ and $l \in A(\mathbb{T}) \setminus
+C^{\frac{2}{3}}(\mathbb{T})$. Incorporating the additional information gives the following figure:
+
+\begin{figure}[!ht]
+  \caption{Function spaces on $\mathbb{T}$}
+  \centering
+    \includegraphics[width=0.5\textwidth]{fspace-2}
+\end{figure}
+
+This gives the adequate description of the function spaces on $\mathbb{T}$ for our interests.
 \hfill $\qed$
+
 \end{solution}
 
 \bigskip
