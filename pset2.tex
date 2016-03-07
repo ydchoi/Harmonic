@@ -166,10 +166,6 @@ Similarly, we have $||f_c||_{H^{\frac{1}{2}}(\mathbb{T})} < \infty$. Therefore, 
 shown that $f_s, f_c \in H^{\frac{1}{2}}(\mathbb{T}$).
 
 \bigskip
-
-We show that $f_{C}(x) \geq c \log\log(\frac{1}{|x|}$ as $x \to 0$.
-
-\bigskip
 By the odd symmetry, it suffices to consider the interval $[0,1/2]$. 
 We will deduce the uniform convergence by providing estimates for three separate intervals:
 $[0,\frac{1}{m}], [\frac{1}{m},\frac{1}{n}], [\frac{1}{n},\frac{1}{2}]$ for fixed $n, m$ such that
@@ -185,15 +181,22 @@ For $x \in [0,\dfrac{1}{m}]$, we have
 \eQe
 For $x \in [\dfrac{1}{m}, \dfrac{1}{n}]$, we obtain 
 
+If $x \in [\frac{1}{m},\frac{1}{n}]$, it follows that $S_{n,m} = S_{n,\lceil \frac{1}{x} \rceil}
++ S_{\lceil \frac{1}{x} \rceil + 1, m}$. Hence, the addition of the two bounds establishes before
+gives the bound on this interval as well.
 Therefore, we have that 
 \eQb
 |g_{n,m}| = O(\dfrac{1}{log(n)}),
 \eQe
 and the partial sums of $f_S$ is cauchy. Thus, $f_S$ converges uniformly and $f \in C(\mathbb{T})$.
 
+\bigskip
+
+We now show that $f_{C}(x) \geq c \log\log(\frac{1}{|x|}$ as $x \to 0$.
+
 \end{solution}
 
-\newpage
+\bigskip
 
 \begin{question}[3]
 \hfill
