@@ -84,8 +84,43 @@ of Harmonic Analysis 2016 at Courant Institute of Mathematical Sciences.
     \includegraphics[width=0.5\textwidth]{HA-2-1.png}
 \end{figure}
 \end{question}
+\begin{solution} \hfill \\
+\textbf{(a)} Assume $ f \in C^{\infty}$. We have that for any $f \in C^{1}(\mathbb{T})$, we have
+$\hat{f}'(n) = 2\pi i n \hat{f}(n)$ for all $n \in \mathbb{Z}$, which gives $\hat{f}(n) 
+= O(|n|^{-1})$.
+Using the same argument inductively, we obtain that $f = O(|n|^{-M})$ for any $M \geq 1$.
+Now, conversely, assume $\hat{f}$ decays rapidly.
+Since $\hat{f}(n) = O(|n|^{-2})$, we have
+that $f \in A(\mathbb{T})$, thus $f \in C(\mathbb{T})$. Suppose that $f \in C^{1}(\mathbb{T})$
+for $n \geq 1$. Observe that 
+\eQb
+(S_N f)^{'} &=& \sum_{|n| \leq N} 2\pi i n \hat{f}(n)e(n),
+\eQe  
+and
+\eQb
+\left| \sum_{N \geq |n| > M}2\pi i n \hat{f}(n) e(n) \right| &\leq& 
+\sum_{N \geq |n| > M} 2\pi|n||\hat{f}(n)|,
+\eQe
+for any $M < N$.
+As $f = O(|n|^{-3})$, it follows that $\{ (S_N f)' \}$ converges uniformly and we obtain that
+$\lim_{N \to \infty} (S_N f)' = f'$, as uniform convergence allows us to commute
+the differential operator and the limit. Furthermore, $f'$ is continuous by uniform convergence.
+Hence, we have that $f \in C^{2}(\mathbb{T})$.  
+By induction, the argument is complete, and we have that $f \in C^{\infty}(\mathbb{T})$.
 
-\begin{solution}
+\bigskip
+
+\textbf{(b)} Assume that $F$ is analytic on some neighborhood of $\{ |z| = 1\}$.
+By analyticity, we can apply the Laurent's theorem on the annulus,
+and obtain that the coefficients of the series is in fact the fourier coefficients. Take 
+$r > 1$ such that it still lies in the neighborhood of $\{|z| = 1\}$, we see that
+\eQb
+F(r) &=& \sum_{n \in \mathbb{Z}} \hat{f}(n) r^{n},
+\eQe
+converges absolutely. By the absolute convergence, we have that $F$ decays
+exponentially. Now, the converse is obvious, as the Fourier series will give emit the
+convergent power series with respect to some $\epsilon$ neighborhood around $\{ |z| = 1\}$,
+which is the definition of analyticity. \hfill $\qed$
 \end{solution}
 
 \newpage
@@ -120,17 +155,23 @@ and
     \end{array}
 \right. .
 \eQe
-By the comparison test and integration by parts, we obtain
+By the comparison test, we obtain
 \eQb
 ||f_s||_{H^{\frac{1}{2}}(\mathbb{T})} &=& |\hat{f}(0)| + 
 \sum_{n \in \mathbb{Z}} |n||\hat{f_s}(n)|^2 \\
 &=& \dfrac{1}{2} \sum_{k=2}^{\infty}\dfrac{1}{n\log^2(n)} \leq 
-\dfrac{1}{2} \int_{2}^{\infty} \dfrac{1}{x\log^2(x)} dx \\
-&=& \dfrac{1}{2}(\dfrac{1}{\log(2)} + \dfrac{1}{2\log^2(2)} < \infty. 
+\dfrac{1}{2} \int_{2}^{\infty} \dfrac{1}{x\log^2(x)} dx =  \dfrac{1}{\log(2)}< \infty. 
 \eQe 
 Similarly, we have $||f_c||_{H^{\frac{1}{2}}(\mathbb{T})} < \infty$. Therefore, we have
 shown that $f_s, f_c \in H^{\frac{1}{2}}(\mathbb{T}$).
+
 \bigskip
+
+We show that $f_{C}(x) \geq c \log\log(\frac{1}{|x|}$ as $x \to 0$.
+
+\bigskip
+
+
 
 Define $g_{n,m} =
  \sum_{i = n}^{m} \dfrac{\sin(2\pi n x)}{n\log(n)}$. 
@@ -223,25 +264,35 @@ It follows that
 &\leq& 
 \sum_{m=1}^{K} \dfrac{2\pi3^m|x-y|}{3^{m\alpha} |x-y|^{\alpha}} +
 \sum_{m=K+1}^{\infty} \dfrac{2}{3^{m\alpha} |x-y|^{\alpha}} \\
+&\leq& 2\pi \sum_{m=1}^{K} (3^{m - K})^{1-\alpha} + 2\dfrac{1}{1-3^{-\alpha}}  \\ 
 &=& 
-2\pi \sum_{m=1}^{K} 
-(3^{m}|x-y|)^{1-\alpha} 
-+
-\sum_{m=K+1}^{\infty} 2 
-((3^{m}|x-y|)^{-\alpha} 
- \\  
-&\leq& 
-2\sum_{m=0}^{\infty} 3^{-\alpha m} \\ 
-&\leq&
-\dfrac{2}{1- 3^{-\alpha}} \\ 
-\eQe 
-
-
+2\pi(3^{1-K})^{1-\alpha}\dfrac{3^{K(1-\alpha)} - 1}{3^{1-\alpha} -1} + \dfrac{2}{1-3^{-\alpha}}\\ 
+&\leq& 2\pi \dfrac{3^{1-\alpha}}{3^{1-\alpha} - 1} + \dfrac{2}{1-3^{-\alpha}}. \\ 
+\eQe
+Since the bound on LHS is a constant, we have shown that $f \in C^{\alpha}(\mathbb{T})$.
 
 \bigskip
 
+By definition of Fourier coefficients, it follows that
+\eQb
+\hat{F}(\pm 3^m) = \dfrac{1}{2\cdot 3^{m\alpha}}.
+\eQe
+Therefore, for any $\beta > \alpha$, we have that 
+$\hat{F}(\pm 3^m) 3^{m\beta} = \dfrac{3^{m (\beta - \alpha)}}{2} \to \infty$ as $M \to \infty$.
+Hence, it follows that $\hat{f}(m) \neq O(|n|^{-\beta})$ for $\beta > \alpha$, and the decay
+estimate cannot be improved.
 
+\bigskip
 
+Now, for the excercise $1.9$,
+the above argument also yields that the given lacunary series is in $C^{\alpha}(\mathbb{T})$. 
+Computing the Sobelev norm of the lacunary series with respect to $\beta$, we obtain
+\eQb
+||f||_{H^{\beta}(\mathbb{T})}^2 &=& \sum_{k \in \mathbb{N}} |2^k|^{2\beta}|2^{-\alpha k}|^2 \\
+&=& \sum_{k \in \mathbb{N}} 2^{2k(\beta - \alpha)} = \infty ,\\ 
+\eQe
+as $\beta - \alpha > 0$. Hence, the given series shows that $C^{\alpha}(\mathbb{T})$ does not
+embed into $H^{\beta}(\mathbb{T})$ for any $\beta > \alpha$ as required.  
  
 \hfill $\qed$
 \end{solution}

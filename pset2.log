@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  5 MAR 2016 19:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  6 MAR 2016 21:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -559,53 +559,53 @@ Package pdftex.def Info: HA-2-1.png used on input line 84.
 
 {/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./HA-2-
 1.png>]
-<HA-2-2.png, id=16, 687.56876pt x 312.16624pt>
+<HA-2-2.png, id=26, 687.56876pt x 312.16624pt>
 File: HA-2-2.png Graphic file (type png)
  <use HA-2-2.png>
-Package pdftex.def Info: HA-2-2.png used on input line 97.
+Package pdftex.def Info: HA-2-2.png used on input line 132.
 (pdftex.def)             Requested size: 397.48499pt x 180.46114pt.
- [2 <./HA-2-2.png>] <HA-2-3.png, id=33, 682.55pt x 63.23625pt>
+ [2 <./HA-2-2.png>] <HA-2-3.png, id=34, 682.55pt x 63.23625pt>
 File: HA-2-3.png Graphic file (type png)
  <use HA-2-3.png>
-Package pdftex.def Info: HA-2-3.png used on input line 161.
+Package pdftex.def Info: HA-2-3.png used on input line 202.
 (pdftex.def)             Requested size: 397.48499pt x 36.8266pt.
- [3 <./HA-2-3.png>] <HA-2-4.png, id=40, 680.5425pt x 146.5475pt>
+ [3 <./HA-2-3.png>] <HA-2-4.png, id=41, 680.5425pt x 146.5475pt>
 File: HA-2-4.png Graphic file (type png)
  <use HA-2-4.png>
-Package pdftex.def Info: HA-2-4.png used on input line 201.
+Package pdftex.def Info: HA-2-4.png used on input line 242.
 (pdftex.def)             Requested size: 397.48499pt x 85.59464pt.
 
-Overfull \hbox (0.91829pt too wide) in alignment at lines 237--237
+Overfull \hbox (0.91829pt too wide) in alignment at lines 271--271
  [][][] []
  []
 
-[4 <./HA-2-4.png>] <HA-2-5.png, id=47, 701.62125pt x 173.64874pt>
+[4 <./HA-2-4.png>] <HA-2-5.png, id=49, 701.62125pt x 173.64874pt>
 File: HA-2-5.png Graphic file (type png)
 
 <use HA-2-5.png>
-Package pdftex.def Info: HA-2-5.png used on input line 255.
+Package pdftex.def Info: HA-2-5.png used on input line 306.
 (pdftex.def)             Requested size: 397.48499pt x 98.37933pt.
- <fspace-1.png, id=48, 410.53375pt x 421.575pt>
+ <fspace-1.png, id=50, 410.53375pt x 421.575pt>
 File: fspace-1.png Graphic file (type png)
 
 <use fspace-1.png>
-Package pdftex.def Info: fspace-1.png used on input line 280.
+Package pdftex.def Info: fspace-1.png used on input line 331.
 (pdftex.def)             Requested size: 198.7425pt x 204.08409pt.
  [5 <./HA-2-5.png> <./fspace-1.png>]
-<fspace-2.png, id=57, 471.7625pt x 446.66875pt>
+<fspace-2.png, id=59, 471.7625pt x 446.66875pt>
 File: fspace-2.png Graphic file (type png)
  <use fspace-2.png>
-Package pdftex.def Info: fspace-2.png used on input line 297.
+Package pdftex.def Info: fspace-2.png used on input line 348.
 (pdftex.def)             Requested size: 198.7425pt x 188.1721pt.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 307.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 358.
  [6 <./fspace-2.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 307.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 358.
  (./pset2.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 307.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 307.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 358.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 358.
 Package rerunfilecheck Info: File `pset2.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 307.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 358.
  ) 
 Here is how much of TeX's memory you used:
  10271 strings out of 493089
@@ -618,21 +618,23 @@ Here is how much of TeX's memory you used:
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/te
 xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/tex
-live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texli
-ve/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive
-/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/20
-15/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2015/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2015/tex
-mf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2015
-/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2
-015/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2015/texm
-f-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fon
-ts/type1/urw/times/utmr8a.pfb>
-Output written on pset2.pdf (6 pages, 379285 bytes).
+live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texli
+ve/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive
+/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2
+015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2015
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2015/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2015/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2015/texmf-d
+ist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2015/tex
+mf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2015/
+texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2015/texmf-di
+st/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/t
+ype1/urw/times/utmr8a.pfb>
+Output written on pset2.pdf (6 pages, 401188 bytes).
 PDF statistics:
- 111 PDF objects out of 1000 (max. 8388607)
- 75 compressed objects within 1 object stream
+ 119 PDF objects out of 1000 (max. 8388607)
+ 81 compressed objects within 1 object stream
  14 named destinations out of 1000 (max. 500000)
  36 words of extra memory for PDF output out of 10000 (max. 10000000)
 
