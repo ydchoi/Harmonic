@@ -179,8 +179,19 @@ For $x \in [0,\dfrac{1}{m}]$, we have
 &\leq& \dfrac{1}{\log(n)}  
 \leq \dfrac{1}{m\log(n)} \sum_{i = n}^{m}{2\pi} \leq \dfrac{2\pi}{\log(n)}.  \\
 \eQe
-For $x \in [\dfrac{1}{m}, \dfrac{1}{n}]$, we obtain 
-
+For $x \in [\dfrac{1}{n}, \dfrac{1}{2}]$, we first note the following teloscooing identity:
+\eQb
+\sum_{k=2}^{n} \sin(2\pi k x) &=& \dfrac{\cos(\pi x)\cos(2\pi x)- \cos(n\pi x)\cos((n+1)\pi x)}
+{\sin(\pi x)}.
+\eQe
+From this identity, it follows that $| \sum_{k=n}^{i} \sin(2\pi k x) | \leq \dfrac{4}{\sin(\pi x)}
+\leq \dfrac{2}{x} \leq 2n$, for all $i \geq n$.
+Therefore, by summation by parts, we obtain that
+\eQb
+|g_{n,m}| &=& \left| 
+\sum_{k=n}^{m} (\dfrac{1}{n\log(n)} - \dfrac{1}{\log(n+1)})\sum_{i=n}^{k}\sin(2\pi n x) \right|
+\leq \dfrac{2}{\log(n)} \\ 
+\eQe
 If $x \in [\frac{1}{m},\frac{1}{n}]$, it follows that $S_{n,m} = S_{n,\lceil \frac{1}{x} \rceil}
 + S_{\lceil \frac{1}{x} \rceil + 1, m}$. Hence, the addition of the two bounds establishes before
 gives the bound on this interval as well.
@@ -192,7 +203,29 @@ and the partial sums of $f_S$ is cauchy. Thus, $f_S$ converges uniformly and $f 
 
 \bigskip
 
-We now show that $f_{C}(x) \geq c \log\log(\frac{1}{|x|}$ as $x \to 0$.
+We now show that $f_{C}(x) \geq c \log\log(\frac{1}{|x|}$ as $x \to 0$. Fix $m > 2$, and consider
+$x \in [\dfrac{1}{8m},\dfrac{1}{4m}]$. It follows that
+\eQb
+\sum_{n=2}^{\infty} \dfrac{\cos(2\pi n x)}{n\log(n)} 
+&=& \sum_{n=2}^{m} \dfrac{\cos(2\pi n x)}{n\log(n)}
++ \sum_{n=m+1}^{\infty} \dfrac{\cos(2\pi n x)}{n\log(n)} \\ 
+&\geq& \sum_{n=2}^{m} \dfrac{1- 2\pi^2 n^2 x^2}{n\log(n)}
++ \sum_{n=m+1}^{\infty} \dfrac{\cos(2\pi n x)}{n\log(n)} 
+\eQe
+Observe that for any $p > m + 1$, we have
+\eQb
+\left| \sum_{n=m+1}^{p} \dfrac{\cos(2\pi n x)}{n\log(n)} \right|
+&=&| \sum_{n=m+1}^{p-1} (\dfrac{1}{n\log(n)} - \dfrac{1}{(n+1)\log(n+1)})
+\sum_{k=m+1}^{n} \cos(2\pi k x) \\
+&+& \dfrac{1}{p\log(p)} \sum_{k=m+1}^{p}\cos(2\pi k x) | \leq \dfrac{4}{\log(m)}. 
+\eQe
+Hence, for $m$ large enough, we have
+\eQb
+f_c(x) &\leq& \int_{2}^{m} \dfrac{1}{x\log(x)} dx - \dfrac{4}{\log(m)} - C \\
+&\leq& C''\log\log(m) \leq C'''\log(\log(\frac{1}{|x|})),
+\eQe
+with the constants being appropriately chosen. Therefore, we have shown that $f_C(x) \geq c\log(
+\log(\dfrac{1}{|x|})$ as $x \to 0$.  
 
 \end{solution}
 
@@ -236,7 +269,7 @@ Hence, we have shown that $||S_N f - \sigma_N f||_{\infty} \to 0$ as $N \to \inf
 \hfill $\qed$
 \end{solution}
 
-\newpage
+\bigskip
 
 \begin{question}[4]
 \hfill
@@ -300,7 +333,7 @@ embed into $H^{\beta}(\mathbb{T})$ for any $\beta > \alpha$ as required.
 \hfill $\qed$
 \end{solution}
 
-\newpage
+\bigskip
 
 \begin{question}[5]
 \hfill
