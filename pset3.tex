@@ -43,7 +43,7 @@
 \usepackage{verbatimbox}
 \usepackage{listings}
 \title{Harmonic Analysis:  \\
-Problem Set II}
+Problem Set III}
 
 
 \author{
@@ -177,7 +177,7 @@ along with
 \dfrac{1}{N} \sum_{n=1}^{N} f_{\epsilon}^{+}(n\alpha). 
 \end{equation} 
 Now, letting $N \to \infty$ on 
-both sides of $\eqref{eq:bound2}$ respectively, we obtain
+both sides of \eqref{eq:bound2} respectively, we obtain
 \eQb
 b - a - 2\epsilon \leq \liminf_{N \to \infty} 
 \dfrac{1}{N} \sum_{n=1}^{N} \chi_{(a,b)}(n\alpha) 
@@ -221,7 +221,12 @@ all Riemann integrable functions on $\mathbb{T}$.
 \smallskip
 
 Now, for the case of Lebesgue integration, consider $\chi_{A}$, where
-$A = \{ <n \alpha> \> | \> n \in \mathbb{N}\}$.  
+$A = \{ <n \alpha> \> | \> n \in \mathbb{N}\}$ ($< >$ denotes the fractional part
+of a number. By definition, we have $\dfrac{1}{N}\sum_{n=1}^{N} f(n\alpha)
+= 1$ for all $N$. As $A$ is countable, and $\chi_{A}$ only $1$ on measure zero set, we have that
+$\int_{0}^{1}f(x)dx = 0$. Therefore, the convergence does not hold true for all Lebesgue measurable
+functions.
+\hfill $\qed$  
 
 \end{solution}
 
@@ -235,6 +240,11 @@ $A = \{ <n \alpha> \> | \> n \in \mathbb{N}\}$.
 \end{figure}
 \end{question}
 \begin{solution}
+First, suppose that $\omega_{f}(\delta)_{L^2} \lesssim \delta^{\alpha}$. Using the dyadic 
+decomposition trick, we have
+\eQb
+\sum_{k > |n|} |\hat{f}(n)|^2 \sum_{m=m_0}^{\infty}\sum_{k \in \triangle_{m}} 
+\eQe
 \end{solution}
 
 \bigskip
@@ -247,6 +257,104 @@ $A = \{ <n \alpha> \> | \> n \in \mathbb{N}\}$.
 \end{figure}
 \end{question}
 \begin{solution} 
+\textbf{(2.2)}
+We first prove the closed form formula for the Poisson Kernel. Let $0 \leq r < 1$. Then, the
+Poisson Kernel is given by
+\eQb
+P_{r}(\theta) &=& \sum_{n \in \mathbb{Z}} r^{|n|} e(n\theta). \\
+\eQe
+As the series is absolutely convergent, with $\omega = re^{i\theta}$, 
+by the geometric series formula, it follows that
+\eQb
+P_{r}(\theta) &=& \sum_{n = 0}^{\infty} \omega^n + \sum_{n=1}^{\infty} \overline{\omega}^n \\
+&=& \dfrac{1}{1-\omega} + \dfrac{\overline{\omega}}{1-\overline{\omega}} 
+= \dfrac{1 - |\omega|^2}{|1-\omega|^2} \\
+&=& \dfrac{1-r^2}{1-2r\cos(2\pi\theta) + r^2}. 
+\eQe
+
+\bigskip
+
+\textbf{(2.3)} Now, we show that the Poisson Kernel is an approximate identity. First, by 
+the absolute convergence, we have
+\eQb
+\int_{\mathbb{T}} P_{r}(\theta) &=& \int_{\mathbb{T}} \sum_{n \in \mathbb{Z}}
+r^{|n|}e(n\theta) 
+= \sum_{n \in \mathbb{Z}} \int_{\mathbb{T}} r^{|n|}e(n\theta) 
+= 1,
+\eQe 
+as the $n=0$ term is the only term that integrates to $1$, when all other terms 
+integrates to $0$. Hence, $(A1)$ from the definition $1.3$ is verified. 
+Now, observe that 
+\begin{equation} \label{eq:lowcheck}
+1 - 2r\cos(2\pi \theta) + r^2 = (1-r)^2 + 2r(1-\cos(2\pi\theta)).
+\end{equation}
+Hence, $Pr(\theta) \geq 0$ for $\theta \in \mathbb{T}$. It follows that
+\eQb
+\sup_{0 \leq r < 1} \int_{\mathbb{T}} |P_r(\theta)| d\theta = 1 < \infty,
+\eQe
+which shows that $(A2)$ is satisfied. Now, we verify the $(A3)$ property. Fix $\delta > 0$.
+For $\dfrac{1}{2} \leq r \leq 1$, and $\delta \leq \theta \leq 1$, by \eqref{eq:lowcheck},
+it follows that
+\begin{equation}\label{eq:lowerbound1}
+0 < c_{\delta} \leq 1 - 2r\cos(2\pi\theta) + r^2, 
+\end{equation}
+for some constant $c_{\delta}$. In view of \eqref{eq:lowerbound1}, we  obtain
+\eQb
+\int_{|\theta| > \delta} |P_{r}(\theta)| d\theta &\leq& 
+\int_{|\theta| > \delta} \dfrac{|1-r^2|}{c_{\delta}} d\theta = \dfrac{1-\delta}{c_{\delta}}
+|1-r^2|.
+\eQe
+Therefore, it follows that 
+\eQb
+\dfrac{1-\delta}{c_{\delta}} |1-r^2| \to 0 \> \text{ as } \> r \to 1^{-} \> \text{, and } \>
+\int_{|\theta| > \delta} |P_{r}(\theta)| d\theta \to 0 \> \text{ as } \> r \to 1^{-},
+\eQe
+as required. This completes the proof that the Poisson Kernel is an approximate identity.
+\bigskip
+
+\textbf{(2.4)-(a)} From Schlag pg. 33, we have the closed form as
+\eQb
+Q_{r}(\theta) &=& \dfrac{2r\sin(2\pi \theta)}{1-2r\cos(2\pi \theta) + r^2}.
+\eQe
+As $\sin(-2\pi \theta) = -\sin(2\pi \theta)$ and $\cos(-2\pi \theta) = \cos(2\pi \theta)$,
+we have 
+\eQb
+Q_{r}(1-\theta) &=& \dfrac{2r\sin(2\pi(1-\theta))}{1-2r\cos(2\pi (1-\theta)) + r^2} \\
+&=& -\dfrac{2r\sin(2\pi \theta)}{1-2r\cos(2\pi \theta) + r^2} = -Q_{r}(\theta). 
+\eQe 
+Thus, $Q_r$ has an odd symmetry, centered at $\theta = 0.5$, implying that
+$\int_{0}^{1} Q_r(\theta) d\theta = 0$ for all $0 < r < 1$, which violates one of the 
+conditions being an approximate identity.
+
+\bigskip
+
+\textbf{(2.4)-(b)} By the double-angle trig identity, we have
+\eQb
+Q_1(\theta) &=& \dfrac{2\sin(2\pi \theta)}{2-2\cos(2\pi \theta)} 
+= \dfrac{2\sin(2\pi \theta)}{2\sin^2(\pi \theta)} = \cot(\pi \theta). 
+\eQe
+For the graph, we have
+\begin{figure}[!ht]
+  \caption{A graph of $\cot(\pi \theta)$}
+  \centering
+    \includegraphics[width=0.5\textwidth]{cot}
+\end{figure}
+
+Now, as $\lim_{\theta \to 0} \dfrac{\sin(\theta)}{\theta} = 1$, and again using the identity,
+ we have
+\eQb
+Q_1(\theta) = \dfrac{\cos(\pi \theta)}{\sin(\pi \theta)} 
+= \dfrac{\sin(2\pi \theta)}{2\sin^2(\pi \theta)} \sim_{\theta \to 0} \dfrac{1}{\theta}, 
+\> \text{ and equivalently } \> Q_1(\theta) = \Theta(\dfrac{1}{\theta}),
+\eQe
+as required.
+
+\bigskip
+
+
+
+
+
 \hfill $\qed$
 \end{solution}
 
@@ -260,7 +368,82 @@ $A = \{ <n \alpha> \> | \> n \in \mathbb{N}\}$.
 \end{figure}
 \end{question}
 \begin{solution} \hfill \\
- 
+We first consider the case of one-sided series, with $A = 0$. Let $\sum_{n=0}^{\infty} a_n$ be
+Cesaro summable to $0$. Let $s_n = \sum_{k=0}^{n} a_n$, $\sigma_n = \sum_{k=0}^{n} s_n$, and $r \in 
+[0,1)$.
+By Cesaro summability, we have $\sigma_n = O(n)$, and the fact that $\sum_{n=0}^{\infty}\sigma_n r^n$
+converges. 
+By the geometric series formula, we have
+\eQb
+\sum_{n=0}^{k}s_n r^n = \dfrac{1-r^{k+1}}{1-r}\sum_{n=0}^{k} a_n r^n
+\eQe 
+Hence, in the limit, we have the following recursive relation:
+\begin{equation}\label{eq:recur1}
+\sum_{n=0}^{\infty} \sigma_n r^n = (1-r)^{-1}\sum_{n=0}^{\infty} s_n r^n = (1-r)^{-2}
+\sum_{n=0}^{\infty} a_n r^n,
+\end{equation}
+which justifies the convergence of the above series as well. 
+In view of \eqref{eq:recur1}, to prove Abel summability to $0$,
+it suffices to show that
+\eQnb\label{eq:suffice}
+\limsup_{r \to 1-} |(1-r)^2\sum_{n=0}^{\infty} \sigma_n r^n| \leq 0.
+\eQne
+Now, fix $\epsilon > 0$. As $ \dfrac{\sigma_n}{n+1} \to 0$, we have
+\eQb
+|(1-r)^2\sum_{n=0}^{\infty} \sigma_n r^n| &\leq& 
+|(1-r)^2\sum_{n=0}^{N} \sigma_n r^n| + |(1-r)^2\sum_{n=N+1}^{\infty} \sigma_n r^n| \\
+&\leq&
+|(1-r)^2\sum_{n=0}^{N} \sigma_n r^n| + |(1-r)^2\sum_{n=N+1}^{\infty} (n+1)
+\dfrac{\sigma_n}{n+1} r^n| \\
+&=&
+|(1-r)^2\sum_{n=0}^{N} \sigma_n r^n| + |(1-r)^2\sum_{n=N+1}^{\infty} (n+1)
+r^n| \epsilon, \\
+\eQe
+for an $N$ large enough. As $|(1-r)^2\sum_{N+1}^{\infty} (n+1)r^n|$ is finite, and $\epsilon$ is
+arbitrary, we obtain
+\eQb
+|(1-r)^2\sum_{n=0}^{\infty} \sigma_n r^n| &\leq&
+|(1-r)^2\sum_{n=0}^{N} \sigma_n r^n| \\
+\eQe
+Now, with $N$ fixed, and letting $r \to 1^{-}$, we obtain \eqref{eq:suffice}.
+Hence, we have shown that that $\sum_{n=0}^{\infty} a_n$ is Abel summable to $0$. 
+
+\bigskip
+
+Consider the series $\sum_{n=0}^{\infty} a_n$ where $a_n = (-1)^{n} n$. For every $0 \leq r < 1$, 
+the Abel sum is formally given by
+\eQb
+A(r) &\sim& \sum_{n=0}^{\infty} (-r)^{n} n.\\
+\eQe
+Employing the summation by parts formula, with $a_n = n$ and $b_n = (-r)^n$, we obtain
+\eQb
+\sum_{n=0}^{N} n(-r)^{n} &=& N\sum_{n=0}^{N}(-r)^{n} - \sum_{n=0}^{N-1} \sum_{k=0}^{n} (-r)^{k} \\
+&=& N\dfrac{1 - (-r)^{N+1}}{1+r} - \sum_{n=0}^{N-1}\dfrac{1-(-r)^{n+1}}{1+r} \\ 
+&=& \dfrac{N}{1+r} - \dfrac{N(-r)^{N+1}}{1+r} - \dfrac{N-1}{1+r} + \dfrac{1}{1+r}
+\sum_{n=0}^{N-1}(-r)^{n+1} \\
+&=& \dfrac{1}{1+r} - \dfrac{N(-r)^{N+1}}{1+r} + \dfrac{1-(-r)^{N}}{(1+r)^2}. \\  
+\eQe
+Letting $N \to \infty$, we obtain
+\eQb
+\sum_{n=0}^{\infty}(-r)^{n}n = \dfrac{2+r}{(1+r)^2},
+\eQe
+and letting $r \to 1-$,
+\eQb
+\lim_{r \to 1-}A(r) = \dfrac{3}{4}, 
+\eQe
+which shows that the series considered is Abel summable. Now, we claim that
+for any Cesaro summable series $\sum_{n=0}^{\infty} a_n$, we have
+$\lim_{n \to \infty} \dfrac{a_n}{n} = 0$. Denote $\sigma_n$ as the
+$n$th Cesaro term. Then, by basic properties of limit, it follows that
+\eQb
+\lim_{n \to \infty} \dfrac{a_n}{n} = \lim_{n \to \infty} \sigma_{n} - \dfrac{n-1}{n}
+\sigma_{n-1} = \lim_{n \to \infty} \sigma_{n} - \lim_{n \to \infty} \dfrac{n-1}{n}
+\lim_{n \to \infty} \sigma_{n-1} = 0,
+\eQe 
+where the last equality holds by the Cesaro summability of $\{a_n\}$. 
+Observe that $\dfrac{a_n}{n} = (-1)^n$, for all $n$. Hence, the necessary condition of
+Cesaro summability does not hold for the above series. Thus, the series is not Cesaro summable,
+but Abel summable. We have shown that the reverse implication does not hold. 
 \hfill $\qed$
 \end{solution}
 
