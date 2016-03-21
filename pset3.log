@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  19 MAR 2016 20:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  21 MAR 2016 08:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -562,42 +562,50 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 {/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./HA-3-
 1.png>]
-[2] [3] <HA-3-2.png, id=37, 658.46pt x 249.93375pt>
+[2] <HA-3-2.png, id=33, 658.46pt x 249.93375pt>
 File: HA-3-2.png Graphic file (type png)
  <use HA-3-2.png>
 Package pdftex.def Info: HA-3-2.png used on input line 239.
 (pdftex.def)             Requested size: 397.48499pt x 150.87668pt.
 
-<HA-3-3.png, id=38, 399.4925pt x 42.1575pt>
+Overfull \hbox (1.59677pt too wide) in alignment at lines 263--263
+ [][][] []
+ []
+
+[3 <./HA-3-2.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 263--265
+
+ []
+
+<HA-3-3.png, id=44, 399.4925pt x 42.1575pt>
 File: HA-3-3.png Graphic file (type png)
  <use HA-3-3.png>
-Package pdftex.def Info: HA-3-3.png used on input line 256.
+Package pdftex.def Info: HA-3-3.png used on input line 291.
 (pdftex.def)             Requested size: 198.7425pt x 20.97255pt.
- [4 <./HA-3-2.png> <./HA-3-3.png>] <cot.png, id=54, 300.12125pt x 196.735pt>
+ [4 <./HA-3-3.png>] <cot.png, id=54, 300.12125pt x 196.735pt>
 File: cot.png Graphic file (type png)
  <use cot.png>
-Package pdftex.def Info: cot.png used on input line 340.
+Package pdftex.def Info: cot.png used on input line 375.
 (pdftex.def)             Requested size: 198.7425pt x 130.28377pt.
-
-<HA-3-4.png, id=55, 706.64pt x 247.92625pt>
+ [5]
+<HA-3-4.png, id=61, 706.64pt x 247.92625pt>
 File: HA-3-4.png Graphic file (type png)
  <use HA-3-4.png>
-Package pdftex.def Info: HA-3-4.png used on input line 367.
+Package pdftex.def Info: HA-3-4.png used on input line 402.
 (pdftex.def)             Requested size: 397.48499pt x 139.45816pt.
 
+Underfull \vbox (badness 3954) has occurred while \output is active []
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[5 <./cot.png>] [6 <./HA-3-4.png>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 453.
+ [6 <./cot.png> <./HA-3-4.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 490.
  [7]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 453.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 490.
  (./pset3.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 453.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 453.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 490.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 490.
 Package rerunfilecheck Info: File `pset3.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 453.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 490.
  ) 
 Here is how much of TeX's memory you used:
  10275 strings out of 493089
@@ -616,17 +624,18 @@ ve/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive
 015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2015
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2015/te
 xmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2015/texmf
--dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2015/t
-exmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/20
-15/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive
-/2015/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2015/te
-xmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/f
-onts/type1/urw/times/utmr8a.pfb>
-Output written on pset3.pdf (7 pages, 348420 bytes).
+mf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2015/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2015/texmf-d
+ist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2015/tex
+mf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2015
+/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2
+015/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2015/texm
+f-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fon
+ts/type1/urw/times/utmr8a.pfb>
+Output written on pset3.pdf (7 pages, 361230 bytes).
 PDF statistics:
- 133 PDF objects out of 1000 (max. 8388607)
- 98 compressed objects within 1 object stream
+ 138 PDF objects out of 1000 (max. 8388607)
+ 101 compressed objects within 2 object streams
  20 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
