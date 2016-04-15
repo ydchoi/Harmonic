@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  22 MAR 2016 13:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  15 APR 2016 08:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**pset3.tex
-(./pset3.tex
+**pset4.tex
+(./pset4.tex
 LaTeX2e <2015/01/01>
 Babel <3.9l> and hyphenation patterns for 79 languages loaded.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/article.cls
@@ -388,6 +388,37 @@ Package: subcaption 2013/02/03 v1.1-62 Sub-captions (AR)
 \c@subfigure=\count129
 \c@subtable=\count130
 )
+(/usr/local/texlive/2015/texmf-dist/tex/latex/scalerel/scalerel.sty
+Package: scalerel 2015/02/18 v1.7 Routines for constrained scaling and stretchi
+ng of objects, relative to a reference object or in absolute terms
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2015/05/04 v2.2 e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count131
+)
+\thesrwidth=\skip57
+\thesrheight=\skip58
+\srblobheight=\skip59
+\srblobdepth=\skip60
+\mnxsrwidth=\skip61
+\prebox=\box32
+\LMex=\skip62
+\LMpt=\skip63
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/stackengine/stackengine.sty
+Package: stackengine 2014/01/06 v3.24\ Stacking text and objects in convenient 
+ways
+\c@@stackindex=\count132
+\@boxshift=\skip64
+\stack@tmplength=\skip65
+\temp@stkl=\skip66
+\@stackedboxwidth=\skip67
+\@addedbox=\box33
+\@anchorbox=\box34
+\stackedbox=\box35
+\@centerbox=\box36
+\c@ROWcellindex@=\count133
+)
 (/usr/local/texlive/2015/texmf-dist/tex/latex/verbatimbox/verbatimbox.sty
 Package: verbatimbox 2014/03/12 v3.13 Routines for placing verbatim text into b
 oxes, useful in places where the verbatim environment is inaccessible. Secondar
@@ -406,102 +437,102 @@ ing it on an element-by-element basis. Currently supports 2-D and 3-D array
 (/usr/local/texlive/2015/texmf-dist/tex/latex/ifnextok/ifnextok.sty
 Package: ifnextok 2011/06/27 v0.3 test next token (UL)
 )
-\c@@index=\count131
-\c@@plane=\count132
-\c@@row=\count133
-\c@@col=\count134
-\c@use@args=\count135
-\c@@record=\count136
-\c@arg@index=\count137
-\c@break@count=\count138
+\c@@index=\count134
+\c@@plane=\count135
+\c@@row=\count136
+\c@@col=\count137
+\c@use@args=\count138
+\c@@record=\count139
+\c@arg@index=\count140
+\c@break@count=\count141
 )
-\savedverbbox=\box32
-\c@VerbboxLineNo=\count139
+\savedverbbox=\box37
+\c@VerbboxLineNo=\count142
 \boxtopsep=\dimen137
 \boxbottomsep=\dimen138
 \ps@tempdima=\dimen139
-\ps@tempboxa=\box33
-\boxtop@sep=\skip57
-\boxbottom@sep=\skip58
+\ps@tempboxa=\box38
+\boxtop@sep=\skip68
+\boxbottom@sep=\skip69
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count140
-\lst@gtempboxa=\box34
+\lst@mode=\count143
+\lst@gtempboxa=\box39
 \lst@token=\toks31
-\lst@length=\count141
+\lst@length=\count144
 \lst@currlwidth=\dimen140
-\lst@column=\count142
-\lst@pos=\count143
+\lst@column=\count145
+\lst@pos=\count146
 \lst@lostspace=\dimen141
 \lst@width=\dimen142
-\lst@newlines=\count144
-\lst@lineno=\count145
+\lst@newlines=\count147
+\lst@lineno=\count148
 \lst@maxwidth=\dimen143
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2014/09/06 1.5e (Carsten Heinz)
-\c@lstnumber=\count146
-\lst@skipnumbers=\count147
-\lst@framebox=\box35
+\c@lstnumber=\count149
+\lst@skipnumbers=\count150
+\lst@framebox=\box40
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2014/09/06 1.5e listings configuration
 ))
 Package: listings 2014/09/06 1.5e (Carsten Heinz)
 
-(./pset3.aux)
-\openout1 = `pset3.aux'.
+(./pset4.aux)
+\openout1 = `pset4.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 70.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 82.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
-\AtBeginShipoutBox=\box36
+\AtBeginShipoutBox=\box41
 
 (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count148
+\scratchcounter=\count151
 \scratchdimen=\dimen144
-\scratchbox=\box37
-\nofMPsegments=\count149
-\nofMParguments=\count150
+\scratchbox=\box42
+\nofMPsegments=\count152
+\nofMParguments=\count153
 \everyMPshowfont=\toks32
-\MPscratchCnt=\count151
+\MPscratchCnt=\count154
 \MPscratchDim=\dimen145
-\MPnumerator=\count152
-\makeMPintoPDFobject=\count153
+\MPnumerator=\count155
+\makeMPintoPDFobject=\count156
 \everyMPtoPDFconversion=\toks33
 )
-Package hyperref Info: Link coloring OFF on input line 70.
+Package hyperref Info: Link coloring OFF on input line 82.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
 (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count154
+\c@section@level=\count157
 )
-LaTeX Info: Redefining \ref on input line 70.
-LaTeX Info: Redefining \pageref on input line 70.
-LaTeX Info: Redefining \nameref on input line 70.
+LaTeX Info: Redefining \ref on input line 82.
+LaTeX Info: Redefining \pageref on input line 82.
+LaTeX Info: Redefining \nameref on input line 82.
 
-(./pset3.out) (./pset3.out)
+(./pset4.out) (./pset4.out)
 \@outlinefile=\write3
-\openout3 = `pset3.out'.
+\openout3 = `pset4.out'.
 
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
@@ -522,120 +553,116 @@ e
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count155
+\c@lstlisting=\count158
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 74.
-LaTeX Font Info:    Try loading font information for U+msa on input line 74.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 86.
+LaTeX Font Info:    Try loading font information for U+msa on input line 86.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 74.
+LaTeX Font Info:    Try loading font information for U+msb on input line 86.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 74.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 86.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 74.
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 74.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 86.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 86.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 75.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 87.
 
-<HA-3-1.png, id=4, 681.54625pt x 280.04625pt>
-File: HA-3-1.png Graphic file (type png)
- <use HA-3-1.png>
-Package pdftex.def Info: HA-3-1.png used on input line 84.
-(pdftex.def)             Requested size: 317.9892pt x 130.66028pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
+<HA-4-1.png, id=4, 685.56125pt x 307.1475pt>
+File: HA-4-1.png Graphic file (type png)
+ <use HA-4-1.png>
+Package pdftex.def Info: HA-4-1.png used on input line 98.
+(pdftex.def)             Requested size: 317.9892pt x 142.4706pt.
  [1
 
-{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./HA-3-
+{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./HA-4-
 1.png>]
-[2] <HA-3-2.png, id=33, 658.46pt x 249.93375pt>
-File: HA-3-2.png Graphic file (type png)
- <use HA-3-2.png>
-Package pdftex.def Info: HA-3-2.png used on input line 239.
-(pdftex.def)             Requested size: 397.48499pt x 150.87668pt.
+<HA-4-2.png, id=24, 697.60625pt x 237.88875pt>
+File: HA-4-2.png Graphic file (type png)
+ <use HA-4-2.png>
+Package pdftex.def Info: HA-4-2.png used on input line 191.
+(pdftex.def)             Requested size: 317.9892pt x 108.43555pt.
+\tmpboxcontent=\box43
+ [2 <./HA-4-2.png>] <HA-4-3.png, id=33, 678.535pt x 205.76875pt>
+File: HA-4-3.png Graphic file (type png)
+ <use HA-4-3.png>
+Package pdftex.def Info: HA-4-3.png used on input line 310.
+(pdftex.def)             Requested size: 317.9892pt x 96.43187pt.
+ [3]
+<HA-4-4.png, id=38, 677.53125pt x 104.39pt>
+File: HA-4-4.png Graphic file (type png)
+ <use HA-4-4.png>
+Package pdftex.def Info: HA-4-4.png used on input line 362.
+(pdftex.def)             Requested size: 317.9892pt x 48.9948pt.
 
-Overfull \hbox (1.59677pt too wide) in alignment at lines 263--263
- [][][] []
- []
 
-[3 <./HA-3-2.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 263--265
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
- []
+[4 <./HA-4-3.png>] <HA-4-5.png, id=45, 683.55376pt x 331.2375pt>
+File: HA-4-5.png Graphic file (type png)
 
-<HA-3-3.png, id=44, 399.4925pt x 42.1575pt>
-File: HA-3-3.png Graphic file (type png)
- <use HA-3-3.png>
-Package pdftex.def Info: HA-3-3.png used on input line 291.
-(pdftex.def)             Requested size: 198.7425pt x 20.97255pt.
- [4 <./HA-3-3.png>] <cot.png, id=54, 300.12125pt x 196.735pt>
-File: cot.png Graphic file (type png)
- <use cot.png>
-Package pdftex.def Info: cot.png used on input line 375.
-(pdftex.def)             Requested size: 198.7425pt x 130.28377pt.
- [5]
-<HA-3-4.png, id=61, 706.64pt x 247.92625pt>
-File: HA-3-4.png Graphic file (type png)
- <use HA-3-4.png>
-Package pdftex.def Info: HA-3-4.png used on input line 402.
-(pdftex.def)             Requested size: 397.48499pt x 139.45816pt.
-
-Underfull \vbox (badness 3954) has occurred while \output is active []
-
- [6 <./cot.png> <./HA-3-4.png>] [7]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 497.
+<use HA-4-5.png>
+Package pdftex.def Info: HA-4-5.png used on input line 407.
+(pdftex.def)             Requested size: 317.9892pt x 154.09459pt.
+ [5 <./HA-4-4.png> <./HA-4-5.png>] [6]
+<HA-4-6.png, id=59, 676.5275pt x 166.6225pt>
+File: HA-4-6.png Graphic file (type png)
+ <use HA-4-6.png>
+Package pdftex.def Info: HA-4-6.png used on input line 539.
+(pdftex.def)             Requested size: 317.9892pt x 78.3202pt.
+ [7 <./HA-4-6.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 635.
  [8]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 497.
- (./pset3.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 497.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 497.
-Package rerunfilecheck Info: File `pset3.out' has not changed.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 635.
+ (./pset4.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 635.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 635.
+Package rerunfilecheck Info: File `pset4.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 497.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 635.
  ) 
 Here is how much of TeX's memory you used:
- 10276 strings out of 493089
- 153102 string characters out of 6134842
- 255927 words of memory out of 5000000
- 13582 multiletter control sequences out of 15000+600000
- 15391 words of font info for 40 fonts, out of 8000000 for 9000
+ 10753 strings out of 493089
+ 159048 string characters out of 6134842
+ 269230 words of memory out of 5000000
+ 14048 multiletter control sequences out of 15000+600000
+ 16318 words of font info for 43 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,12n,39p,251b,424s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 37i,15n,39p,925b,424s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
-exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/te
-xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/tex
-live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texli
-ve/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive
-/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2
-015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2015
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2015/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2015/texmf
--dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2015/texmf-d
-ist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2015/tex
-mf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2015
-/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2
-015/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2015/texm
-f-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fon
-ts/type1/urw/times/utmr8a.pfb>
-Output written on pset3.pdf (8 pages, 362749 bytes).
+exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/te
+xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/tex
+live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texl
+ive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texliv
+e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/
+2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/20
+15/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2015/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2015/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2015/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2015/texmf-di
+st/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2015/texm
+f-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2015/t
+exmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2015/texmf-dis
+t/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/ty
+pe1/urw/times/utmr8a.pfb>
+Output written on pset4.pdf (8 pages, 475745 bytes).
 PDF statistics:
- 142 PDF objects out of 1000 (max. 8388607)
- 104 compressed objects within 2 object streams
- 21 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 130 PDF objects out of 1000 (max. 8388607)
+ 91 compressed objects within 1 object stream
+ 15 named destinations out of 1000 (max. 500000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
 
