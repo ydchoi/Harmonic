@@ -233,7 +233,15 @@ As $f \in L^1$, by the inversion formula, we have, for any $x \in \mathbb{R}$(Le
 \eQb
 f(x) = \int_{-\Lambda}^{\Lambda} \hat{f}(\xi)e^{2\pi i x \xi } dx.
 \eQe
-
+Since $\hat{f}(\xi)$ is uniformly continuous, we have that the integrand, when viewed as a function of 
+two variables is continuous, as a product of continuous function is continuous. Hence, as the
+integral is over compact domain, we have
+that the differentiation under integral sign is justified, and
+\eQb
+\dfrac{d^n}{dx} f(x) = \int_{-\Lambda}^{\Lambda} \dfrac{d^n}{dx} \hat{f}(\xi)e^{2\pi i x \xi } dx,
+\eQe
+for any $n \in \mathbb{N}$. Since $e^{2\pi i x \xi}$ is in $C^{\infty}$ with respect to the $x$ 
+variable, we have shown that $f$ is Lebesgue equivalent to $C^{\infty}$
 
 \bigskip
 
@@ -280,7 +288,7 @@ The proof can be found in pg. 56 of Stein's Complex Analysis. To invoke the theo
 we take $\Omega = \mathbb{C}$,
 $M = \Lambda$, and $F(z,\xi) = \hat{f}(\xi)e^{2\pi i \xi z}$. For any $\xi \in [-\Lambda, \Lambda]$,
 $\hat{f}(\xi)e^{2\pi i \xi z}$ is continuous, so $(i)$ is satisfied. As $\hat{f}$ is uniformly continuous,
-$(ii)$ is also satisfied, so we conclude that $f$ is entire. 
+$(ii)$ is also satisfied (argued in $(b)$ more explicitly), so we conclude that $f$ is entire. 
 \hfill $\qed$
 
 \end{solution}
