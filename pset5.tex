@@ -1,0 +1,314 @@
+\documentclass{article} % For LaTeX2e
+\usepackage{nips14submit_e,times}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+%\documentstyle[nips14submit_09,times,art10]{article} % For LaTeX 2.09
+
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+
+\def\eQb#1\eQe{\begin{eqnarray*}#1\end{eqnarray*}}
+\def\aB#1\aE{\begin{align*}#1\end{align*}}
+\def\eQnb#1\eQne{\begin{align}#1\end{align}}
+\providecommand{\e}[1]{\ensuremath{\times 10^{#1}}}
+\providecommand{\pb}[0]{\pagebreak}
+
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+
+\def\Qb#1\Qe{\begin{question}#1\end{question}}
+\def\Sb#1\Se{\begin{solution}#1\end{solution}}
+
+\usepackage{scalerel,stackengine}
+\stackMath
+\newcommand\reallywidehat[1]{%
+\savestack{\tmpbox}{\stretchto{%
+  \scaleto{%
+    \scalerel*[\widthof{\ensuremath{#1}}]{\kern-.6pt\bigwedge\kern-.6pt}%
+    {\rule[-\textheight/2]{1ex}{\textheight}}%WIDTH-LIMITED BIG WEDGE
+  }{\textheight}% 
+}{0.5ex}}%
+\stackon[1pt]{#1}{\tmpbox}%
+}
+
+\newenvironment{claim}[1]{\par\noindent\underline{Claim:}\space#1}{}
+\newtheoremstyle{quest}{\topsep}{\topsep}{}{}{\bfseries}{}{ }{\thmname{#1}\thmnote{ #3}.}
+\theoremstyle{quest}
+\newtheorem*{definition}{Definition}
+\newtheorem*{theorem}{Theorem}
+\newtheorem*{lemma}{Lemma}
+\newtheorem*{question}{Question}
+\newtheorem*{preposition}{Preposition}
+\newtheorem*{exercise}{Exercise}
+\newtheorem*{challengeproblem}{Challenge Problem}
+\newtheorem*{solution}{Solution}
+\newtheorem*{remark}{Remark}
+\usepackage{verbatimbox}
+\usepackage{listings}
+\title{Harmonic Analysis:  \\
+Problem Set V}
+
+
+\author{
+Youngduck Choi \\
+CIMS \\
+New York University\\
+\texttt{yc1104@nyu.edu} \\
+}
+
+
+% The \author macro works with any number of authors. There are two commands
+% used to separate the names and addresses of multiple authors: \And and \AND.
+%
+% Using \And between authors leaves it to \LaTeX{} to determine where to break
+% the lines. Using \AND forces a linebreak at that point. So, if \LaTeX{}
+% puts 3 of 4 authors names on the first line, and the last on the second
+% line, try using \AND instead of \And before the third author name.
+
+\newcommand{\fix}{\marginpar{FIX}}
+\newcommand{\new}{\marginpar{NEW}}
+
+\nipsfinalcopy % Uncomment for camera-ready version
+
+\begin{document}
+
+
+\maketitle
+
+\begin{abstract}
+This work contains solutions to the problem set IV
+of Harmonic Analysis 2016 at Courant Institute of Mathematical Sciences.
+\end{abstract}
+
+\bigskip
+
+\begin{question}[1]
+\hfill
+\begin{figure}[h!]
+  \centering
+    \includegraphics[width=0.8\textwidth]{HA-5-1.png}
+\end{figure}
+\end{question}
+\begin{solution} \hfill \\
+\textbf{(a)}
+Let $p < 2$.
+Assume that there is no uniform constant $c_p > 0$ such that $||\hat{f}||_{p'} \geq 
+c_p ||f||_{p}$ for all $f \in S$. Since Fourier transform is a bijective mapping
+from $S$ to $S$, and, for $f \in S$, $||\hat{\hat{f}}||_{p'} = ||f||_{p'}$ (Fourier transform
+composed twice on the Schwarz space is a parity operator, which does not change
+the integration result for $f \in S$), substituting $\hat{f}$
+in the position of $f$ implies that there is no uniform constant $c_p > 0$ such that 
+\eQb
+||f||_{p'} &\geq& c_p ||\hat{f}||_{p}, 
+\eQe
+for any $f \in S$. Since $S \subset L^p$, we conclude that the given statement is sufficient.
+
+\bigskip
+
+\textbf{(b)} With $u = \sqrt{i}x$, it follows that
+\eQb
+\int e^{ix^2} = \dfrac{1}{\sqrt{i}} \int e^{u^2} du = (\dfrac{1}{\sqrt{2}}
+- i \dfrac{1}{\sqrt{2}} )\text{erf} (u) + C, 
+\eQe
+where the last equality holds with the well-known error function. Since $|\text{erf}(z)| \leq 1$ 
+for any $z \in \mathbb{C}$, it follows that
+\eQb
+|\int_{a}^{b} e^{ix^2} dx| &=& 
+|(\dfrac{1}{\sqrt{2}} - i\dfrac{1}{\sqrt{2}})|
+|\text{erf}(b) - \text{erf}(a)| \\ 
+&\leq&  2|(\dfrac{1}{\sqrt{2}} - i\dfrac{1}{\sqrt{2}})| \leq C,
+\eQe
+for some absolute constant $C$.
+
+\bigskip
+
+\textbf{(c)}
+It follows that, for some absolute constant $C$, with any $\xi \in \mathbb{R}$,
+\eQb
+|\hat{f_{\lambda}}(\xi)| \leq C\lambda^{-\frac{1}{2}},
+\eQe
+so
+\eQb
+||\hat{f}_{\lambda}||_{\infty} \leq C\lambda^{-\frac{1}{2}}, 
+\eQe
+as required.
+
+\bigskip
+
+\textbf{(d)} By generalized Holder's inequality with $n = 2$ and $\theta = \frac{2}{p'}$, we obtain
+\eQb
+||\hat{f}_{\lambda}||_{p'} &\leq& ||\hat{f}_{\lambda}||_{2}^{\frac{2}{p'}} 
+||\hat{f}_{\lambda}||_{\infty}^{1-\frac{2}{p'}}.
+\eQe
+
+As $|e^{-\pi i \lambda x^2}| = 1$ for any $x \in \mathbb{R}$, and $||f||_{2} = ||\hat{f}||_{2}$ for $f 
+\in L^2$,  
+we see that
+\eQb
+||\hat{f}_{\lambda}||_{2} &=& ||f_{\lambda}||_{2} = 
+(\int_{\mathbb{R}} |e^{-\pi x^2}e^{-\pi i \lambda x^2}|^p)^{\frac{1}{p}} 
+= ||e^{-\pi x^2}||_{p} = C, 
+\eQe
+for some absolute constant $C$. Therefore, by $(c)$ and the above equality, it follows that
+\eQb
+||\hat{f}_{\lambda}||_{p'} &\leq& ||\hat{f}_{\lambda}||_{2}^{\frac{2}{p'}} 
+||\hat{f}_{\lambda}||_{\infty}^{1-\frac{2}{p'}} \leq C\lambda^{\frac{1}{p'}-\frac{1}{2}},
+\eQe
+for some absolute constant $C$. Now, we deduce $(a)$. Similarly, we have
+\eQb
+||f_{\lambda}||_{p} &=& (\int_{\mathbb{R}} |e^{-\pi x^2}e^{-\pi i \lambda x^2}|^p)^{\frac{1}{p}} 
+= ||e^{-\pi x^2}||_{p} = \delta, 
+\eQe
+for some constant $\delta > 0$, independent of $\lambda$.
+ Let $c_p > 0$ be given. Then, for $\lambda > 0$ sufficiently small, it follows that
+\eQb
+||\hat{f}_{\lambda}||_{p'} \leq C\lambda^{\frac{1}{p'}-\frac{1}{2}} \leq c_p ||f_{\lambda}||_{p}, 
+\eQe
+where $C$ is some absolute constant. Therefore, there does not exist a uniform constant $c_p > 0$
+such that $||\hat{f}||_{p'} \geq c_p ||f||_{p}$ for all $f \in S$.
+
+\bigskip
+
+
+\textbf{(e)} Let $1 \leq p < 2$.
+Suppose for sake of contradiction that Fourier transform is a surjective 
+map from $L^p$ to $L^{p'}$. As the Fourier 
+transform is unique on $L^p$ for $1 \leq p < 2$, this implies that the Fourier transform is a 
+bijective map from $L^p$ to  $L^{p'}$. Now, by the Open Mapping theorem, we have that
+the Fourier transform is a bijective, open map from $L^p$ to $L^{p'}$. Then,
+the inverse map of the Fourier transform is well-defined and continuous from $L^{p'}$
+to $L^p$. This is a contradiction to $(a)$.
+
+\end{solution}
+
+\newpage
+
+\begin{question}[2]
+\hfill
+\begin{figure}[h!]
+  \centering
+    \includegraphics[width=0.8\textwidth]{HA-5-2.png}
+\end{figure}
+\end{question}
+\begin{solution} \hfill \\
+\textbf{(a)}
+Let $f \in B^{1}_{\lambda}$, and
+$X$ be the characteristic function of $[-\Lambda, \Lambda]$. As $f \in L^{1}$, applying 
+the inversion formula to $\hat{f} = \hat{f}X$ gives
+\eQb
+f &=& f * \check{X}. 
+\eQe
+Since $X \in S$, it follows that $\check{X} \in S$, so $\check{X} \in L^p$ for any $p \geq 1$.
+Therefore for any $p \geq 1$, by Young's inequality, we obtain
+\eQb
+||f||_{p} \leq ||f||_{1} ||\check{X}||_{p} < \infty,
+\eQe
+as required. 
+
+\bigskip
+
+\textbf{(b)} 
+Let $f \in L^1$. It follows that $\hat{f'} = -2\pi i \hat{f}$. Define $g$ by
+\eQb
+g(x) &=& -2\pi i \int \hat{f}(\xi) e^{ix\xi}d\xi. 
+\eQe
+
+
+\textbf{(d)} From classical complex analysis, we have the following theorem.
+
+\begin{theorem}
+Let $F(z,\xi)$ be defined for $(z,\xi) \in \Omega \times [-M,M]$ where $\Omega$ is an
+open set in $\mathbb{C}$. Suppose $F$ satisfies the following properties: (i) 
+$F(z,\xi)$ is holomorphic in $z$ for each $\xi$. (ii) $F$ is continuous on $\Omega \times [-M,M]$. 
+Then, $f(z) = \int_{[-M,M]} \hat{f}(\xi) e^{2\pi i \xi z} d\xi$ is holomorphic.  
+\end{theorem} 
+
+The proof can be found in pg. 56 of Stein's Complex Analysis. To invoke the theorem, 
+we take $\Omega = \mathbb{C}$,
+$M = \Lambda$, and $F(z,\xi) = \hat{f}(\xi)e^{2\pi i \xi z}$. For any $\xi \in [-\Lambda, \Lambda]$,
+$\hat{f}(\xi)e^{2\pi i \xi z}$ is continuous, so $(i)$ is satisfied. $F$ 
+
+
+\end{solution}
+
+\newpage
+
+\begin{question}[3]
+\hfill
+\begin{figure}[h!]
+  \centering
+    \includegraphics[width=0.8\textwidth]{HA-5-3.png}
+\end{figure}
+\end{question}
+\begin{solution} \hfill \\
+
+\textbf{(a)} By definition of ONS, we have
+\eQb
+\{ e_n \varphi(x)\}_{m \in \mathbb{Z}} \> \text{ is an ONS} \iff 
+\int e_n \varphi \overline{e_m \varphi}(x) dx = 0 
+\eQe
+
+\textbf{(b)}
+As $\varphi \in L^2$, we have $\hat{\varphi} \in L^2$. From $(a)$, it follows that
+\eQb
+\sum_{m \in \mathbb{Z}} |\hat{\varphi}(\xi-m)|^2 = 1 \> \text{ a.e. } \xi
+\iff 
+\{ e^{2\pi i m \xi} \hat{\varphi}(\xi) \}_{m \in \mathbb{Z}} \> \text{ is an ONS}.
+\eQe
+As the Fourier transform is an isometry on $L^2$, we have
+\eQb
+\{ \varphi(\xi -m)\}_{m \in \mathbb{Z}} \> \text{ is an ONS} 
+\iff
+\{ \widehat{\varphi(\xi-m)}\}_{m \in \mathbb{Z}} \> \text{ is an ONS},
+\eQe 
+which through the identity $\widehat{\varphi(\xi-m)} = \hat{\varphi}(\xi)e^{-2\pi i m\xi}$ 
+and the first equivalence implies
+\eQb
+\sum_{m \in \mathbb{Z}} |\hat{\varphi}(\xi - m)|^2 = 1 \> \text{ a.e. } \xi 
+\iff
+\{\varphi(\xi -m )\}_{m \in \mathbb{Z}} \> \text{ is an ONS} 
+\eQe
+as required. \hfill $\qed$
+\end{solution}
+
+\newpage 
+
+\begin{question}[4]
+\hfill
+\begin{figure}[h!]
+  \centering
+    \includegraphics[width=0.8\textwidth]{HA-5-4.png}
+\end{figure}
+\end{question}
+\begin{solution} \hfill \\
+\textbf{(a)} We restate the results for $B^2_{\Lambda}$ instead of $B^1_{\Lambda}$.
+
+\bigskip
+
+\textbf{(b)} Let $\{f_n\}$ be a sequence in $B_{\Lambda}^2$ such that it converges to
+some $f \in L^2$. As $||\hat{g}||_2 = ||g||_2$ for any $g \in L^2$, it follows that
+$\{\hat{f_n}\}$ converges to $\hat{f}$ in $L^2$. Since the compactness of the support 
+persists through $L^2$ limit (this trivially can be shown using a proof by contradiction), 
+it follows that $\text{supp}\hat{f} \subset [-\Lambda,\Lambda]$,
+so $f \in B_{\Lambda}^2$. Hence, $B_{\Lambda}^2$ is closed. 
+
+\smallskip
+
+We now show that $B_{\Lambda}^2$ is invariant under translations. Fix $h \in \mathbb{R}$, and
+let $\eta_{h}$ be defined by $(\eta_{h}f)(x) = f(x-h)$ on $L^2$. If $g \in B_{\Lambda}^2$, 
+
+    
+
+
+\end{solution}
+
+\end{document}
