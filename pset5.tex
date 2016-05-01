@@ -229,9 +229,9 @@ L^p$ for $1 \leq p \leq \infty$.
 \bigskip
 
 \textbf{(b)} 
-Let $f \in L^1$. It follows that $\hat{f'} = -2\pi i \hat{f}$. Define $g$ by
+As $f \in L^1$, by the inversion formula, we have, for any $x \in \mathbb{R}$(Lebesgue identifiable point),
 \eQb
-g(x) &=& -2\pi i \int \hat{f}(\xi) e^{ix\xi}d\xi. 
+f(x) = \int_{-\Lambda}^{\Lambda} dd
 \eQe
 
 \bigskip
@@ -334,13 +334,15 @@ as required. \hfill $\qed$
 \end{figure}
 \end{question}
 \begin{solution} \hfill \\
-\textbf{(a)} We restate the results for $B^2_{\Lambda}$ instead of $B^1_{\Lambda}$.
+\textbf{(a)} We restate the results for $B^2_{\Lambda}$ instead of $B^1_{\Lambda}$,
+but without changing the lower bound on $p$ from $1$ to $2$. 
 
 \bigskip
 
 \textbf{(b)} Let $\{f_n\}$ be a sequence in $B_{\Lambda}^2$ such that it converges to
 some $f \in L^2$. As $||\hat{g}||_2 = ||g||_2$ for any $g \in L^2$, it follows that
-$\{\hat{f_n}\}$ converges to $\hat{f}$ in $L^2$. Since the compactness of the support 
+$\{\hat{f_n}\}$ converges to $\hat{f}$ in $L^2$. Since the property of support being contained
+in compact set
 persists through $L^2$ limit (this trivially can be shown using a proof by contradiction), 
 it follows that $\text{supp}\hat{f} \subset [-\Lambda,\Lambda]$,
 so $f \in B_{\Lambda}^2$. Hence, $B_{\Lambda}^2$ is closed. 
@@ -348,14 +350,41 @@ so $f \in B_{\Lambda}^2$. Hence, $B_{\Lambda}^2$ is closed.
 \smallskip
 
 We now show that $B_{\Lambda}^2$ is invariant under translations. Fix $h \in \mathbb{R}$, and
-let $\eta_{h}$ be defined by $(\eta_{h}f)(x) = f(x-h)$ on $L^2$. If $g \in B_{\Lambda}^2$, 
+let $\eta_{h}$ be defined by $(\eta_{h}f)(x) = f(x-h)$ on $L^2$. Now, consider the modulation
+operator $m_{h}$ to be defined by $(m_{h}f)(x) = e^{2\pi ih x}f(x)$. Then, it follows 
+that, for $f \in L^2$, and $\xi \in \mathbb{R}$, 
+\eQb
+\widehat{\eta_{h}f}(\xi) &=& \int f(x-h)e^{-2\pi i \xi x} dx = (m_{-h}\hat{f})(\xi),
+\eQe
+so 
+\eQb
+\text{supp}\> \> \widehat{\eta_{h} f} = \text{supp}\> \> {m_{-h}}\hat{f} = \text{supp}
+\>\> \hat{f}, 
+\eQe
+as one can trivially see that a support of a function is an invariant property under 
+the modulation operator.
+Therefore, we have shown that the translation operator is invariant on $B_{\Lambda}^2$.
+
+
+\bigskip 
 
 \textbf{(c)} 
-Now, $f$ can be expressed as
+Now, $f \in B_{\Lambda}^{1}$ can be expressed as
 \eQb
-f &=& \sum_{n \in \mathbb{Z}} <f,\sinc(\cdot - n)>\sinc(\cdot -n)
+f &=& \sum_{n \in \mathbb{Z}} <f,\text{sinc}(\cdot - n)>\text{sinc}(\cdot -n)
 \eQe    
 
+\bigskip
+
+\textbf{(d)} By Cauchy-Scwhwarz, it follows that
+\eQb
+\sum_{n \in \mathbb{Z}}|<f,\text{sinc}(\cdot-n)>||\text{sinc}(t-n)| &\leq& (\sum_{n \in \mathbb{Z}}
+|<f,\text{sinc}(\cdot -n)>|^2)^{\frac{1}{2}} (\sum_{n \in \mathbb{Z}} \text{sinc}^2(t-n))^{\frac{1}{2}}. 
+\eQe
+In view of Parseval's theorem, we see that the first sum on the RHS converges, so
+it suffices to show that the $\text{sinc}$ sum is uniformly bounded, but 
+this can be shown with the comparison test with $\sum_{n \in \mathbb{Z}} \dfrac{1}{n^2}$. 
+Therefore, the sum is uniformly bounded for all $t \in \mathbb{R}$, so the convergence is uniform.
 
 \end{solution}
 
