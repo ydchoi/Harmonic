@@ -261,8 +261,8 @@ By the inequality employed in part $(a)$, it follows that
 ||f^{(m)}||_{p} &=& ||f * \varphi_{\Lambda}^{(m)}||_{p} \leq ||\varphi_{\Lambda}^{(m)}||_{1} ||f||_{p}
 \leq (c\Lambda)^m||f||_{p}, \\
 \eQe
-for some absolute constant $c$, as the Schwarz class is closed under differentiation and the last
-inequality follows from the definition of Schwarz class. 
+for some absolute constant $c$, as the Schwartz class is closed under differentiation and the last
+inequality follows from the definition of Schwartz class. 
 
 \bigskip
 
@@ -350,7 +350,11 @@ so $f \in B_{\Lambda}^2$. Hence, $B_{\Lambda}^2$ is closed.
 We now show that $B_{\Lambda}^2$ is invariant under translations. Fix $h \in \mathbb{R}$, and
 let $\eta_{h}$ be defined by $(\eta_{h}f)(x) = f(x-h)$ on $L^2$. If $g \in B_{\Lambda}^2$, 
 
-    
+\textbf{(c)} 
+Now, $f$ can be expressed as
+\eQb
+f &=& \sum_{n \in \mathbb{Z}} <f,\sinc(\cdot - n)>\sinc(\cdot -n)
+\eQe    
 
 
 \end{solution}
