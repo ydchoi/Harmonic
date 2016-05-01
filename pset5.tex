@@ -105,7 +105,7 @@ Assume that there is no uniform constant $c_p > 0$ such that $||\hat{f}||_{p'} \
 c_p ||f||_{p}$ for all $f \in S$. Since Fourier transform is a bijective mapping
 from $S$ to $S$, and, for $f \in S$, $||\hat{\hat{f}}||_{p'} = ||f||_{p'}$ (Fourier transform
 composed twice on the Schwarz space is a parity operator, which does not change
-the integration result for $f \in S$), substituting $\hat{f}$
+any $L^p$ norm for $f \in S$), substituting $\hat{f}$
 in the position of $f$ implies that there is no uniform constant $c_p > 0$ such that 
 \eQb
 ||f||_{p'} &\geq& c_p ||\hat{f}||_{p}, 
@@ -131,7 +131,15 @@ for some absolute constant $C$.
 
 \bigskip
 
-\textbf{(c)}
+\textbf{(c)} By definition of Fourier transform, we have
+\eQb
+\hat{f_{\lambda}}(\xi) &=& \int_{\mathbb{R}} f_{\lambda}(x) e^{-2\pi i x \xi} dx 
+=\int_{\mathbb{R}} e^{-\pi x^2}e^{-\pi i \lambda x^2} e^{-2\pi i x \xi} dx, 
+\eQe
+By integration by parts, it follows that
+\eQb
+\int_{-N}^{N} e^{-\pi x^2}e^{-\pi i \lambda x^2} e^{-2\pi i x \xi} dx &=&  
+\eQe
 It follows that, for some absolute constant $C$, with any $\xi \in \mathbb{R}$,
 \eQb
 |\hat{f_{\lambda}}(\xi)| \leq C\lambda^{-\frac{1}{2}},
@@ -201,18 +209,22 @@ to $L^p$. This is a contradiction to $(a)$.
 \end{question}
 \begin{solution} \hfill \\
 \textbf{(a)}
-Let $f \in B^{1}_{\lambda}$, and
+Let $f \in B^{1}_{\Lambda}$, and
 $X$ be the characteristic function of $[-\Lambda, \Lambda]$. As $f \in L^{1}$, applying 
-the inversion formula to $\hat{f} = \hat{f}X$ gives
+the inversion to $\hat{f} = \hat{f}X$ gives
 \eQb
 f &=& f * \check{X}. 
 \eQe
-Since $X \in S$, it follows that $\check{X} \in S$, so $\check{X} \in L^p$ for any $p \geq 1$.
-Therefore for any $p \geq 1$, by Young's inequality, we obtain
+Arising from the fact that the Fourier transform is a bijective mapping on $S$ to $S$,
+$S$ is in $L^p$ for any $1 \leq p \leq \infty$, and $X \in S$, 
+it follows that $\check{X} \in S$, so $\check{X} \in L^p$ for any $p \geq 1$.
+Therefore for any $1 \leq p \leq \infty$, by Young's inequality for convolution (to be exact, it
+is the form recorded in Schlag pg.74) , we obtain
 \eQb
-||f||_{p} \leq ||f||_{1} ||\check{X}||_{p} < \infty,
+||f||_{p} = ||f * \check{X}||_{p} \leq ||f||_{1} ||\check{X}||_{p} < \infty.
 \eQe
-as required. 
+Hence $f \in L^p$ for any $1 \leq p \leq \infty$, so we have shown that $B^1_{\Lambda} \subset 
+L^p$ for $1 \leq p \leq \infty$.
 
 \bigskip
 
@@ -222,6 +234,37 @@ Let $f \in L^1$. It follows that $\hat{f'} = -2\pi i \hat{f}$. Define $g$ by
 g(x) &=& -2\pi i \int \hat{f}(\xi) e^{ix\xi}d\xi. 
 \eQe
 
+\bigskip
+
+\textbf{(c)} Set $\varphi_{\Lambda}(\xi) = \Lambda \varphi(\Lambda x)$. Then, by a change of variable
+$y = \Lambda x$, we obtain
+\eQb
+\hat{\varphi_{\Lambda}}(\xi) &=& \int \varphi(\Lambda x) e^{i\frac{\xi}{\Lambda} \Lambda x} d\Lambda x 
+= \int \varphi(y) e^{i\frac{\xi}{\Lambda y}} dy = \hat{\varphi}(\frac{\xi}{\Lambda}), 
+\eQe
+so 
+\eQb
+\hat{\varphi_{\Lambda}}(\xi) = 1 \> \> \text{ for } |\xi| \leq \Lambda.
+\eQe
+Therefore, by the noted observation and the inversion, it follows that
+\eQb
+\widehat{f * \varphi_{\Lambda}} = \hat{f} \hat{\varphi_{\Lambda}} = \hat{f} \> \text{ and } \>
+f * \varphi_{\Lambda} = f.
+\eQe
+Differentiating the last identity $m$ times, which is justified by $(b)$, and choosing to
+differentiate $\varphi_{\Lambda}$ term in the convolution yields
+\eQb
+f^{(m)} = f * \varphi_{\Lambda}^{(m)}.
+\eQe
+By the inequality employed in part $(a)$, it follows that
+\eQb
+||f^{(m)}||_{p} &=& ||f * \varphi_{\Lambda}^{(m)}||_{p} \leq ||\varphi_{\Lambda}^{(m)}||_{1} ||f||_{p}
+\leq (c\Lambda)^m||f||_{p}, \\
+\eQe
+for some absolute constant $c$, as the Schwarz class is closed under differentiation and the last
+inequality follows from the definition of Schwarz class. 
+
+\bigskip
 
 \textbf{(d)} From classical complex analysis, we have the following theorem.
 
@@ -235,8 +278,9 @@ Then, $f(z) = \int_{[-M,M]} \hat{f}(\xi) e^{2\pi i \xi z} d\xi$ is holomorphic.
 The proof can be found in pg. 56 of Stein's Complex Analysis. To invoke the theorem, 
 we take $\Omega = \mathbb{C}$,
 $M = \Lambda$, and $F(z,\xi) = \hat{f}(\xi)e^{2\pi i \xi z}$. For any $\xi \in [-\Lambda, \Lambda]$,
-$\hat{f}(\xi)e^{2\pi i \xi z}$ is continuous, so $(i)$ is satisfied. $F$ 
-
+$\hat{f}(\xi)e^{2\pi i \xi z}$ is continuous, so $(i)$ is satisfied. As $\hat{f}$ is uniformly continuous,
+$(ii)$ is also satisfied, so we conclude that $f$ is entire. 
+\hfill $\qed$
 
 \end{solution}
 
