@@ -132,22 +132,6 @@ for some absolute constant $C$.
 \bigskip
 
 \textbf{(c)} With $y = \sqrt{\pi \lambda}x$, we compute with integration by parts
-\eQb
-|\hat{f_{\lambda}}(\xi)| &=& 
- |\int_{\mathbb{R}} e^{-(\frac{y-\xi\sqrt{\frac{\pi}{\lambda}}}{2})^2} e^{-iy^2} dy| \\
-&\leq& 
-|\int_{\xi\sqrt{\frac{\pi}{\lambda}}}^{\infty}
- e^{-(\frac{y-\xi\sqrt{\frac{\pi}{\lambda}}}{2})^2} e^{-iy^2} dy| \\
-&+& |\int_{-\infty}^{\xi\sqrt{\frac{\pi}{\lambda}}}
- e^{-(\frac{y-\xi\sqrt{\frac{\pi}{\lambda}}}{2})^2} e^{-iy^2} dy| \\
-&=& |\int_{\xi\sqrt{\frac{\pi}{\lambda}}}^{\infty}
- 2(\dfrac{y-\xi\sqrt{\frac{\pi}{\lambda}}}{\lambda})\dfrac{1}{\lambda}
-e^{-(\frac{y-\xi\sqrt{\frac{\pi}{\lambda}}}{2})^2} F(y) dy| \\
-&+& |\int_{-\infty}^{\xi\sqrt{\frac{\pi}{\lambda}}}
-2(\dfrac{y-\xi\sqrt{\frac{\pi}{\lambda}}}{\lambda})\dfrac{1}{\lambda}
- e^{-(\frac{y-\xi\sqrt{\frac{\pi}{\lambda}}}{2})^2} F(y) dy| \leq C,\\
-\eQe 
-for some absolute constant $C$,
 so
 \eQb
 ||\hat{f}_{\lambda}||_{\infty} \leq C\lambda^{-\frac{1}{2}}, 
