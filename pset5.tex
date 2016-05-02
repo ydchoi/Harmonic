@@ -131,19 +131,23 @@ for some absolute constant $C$.
 
 \bigskip
 
-\textbf{(c)} By definition of Fourier transform, we have
+\textbf{(c)} With $y = \sqrt{\pi \lambda}x$, we compute with integration by parts
 \eQb
-\hat{f_{\lambda}}(\xi) &=& \int_{\mathbb{R}} f_{\lambda}(x) e^{-2\pi i x \xi} dx 
-=\int_{\mathbb{R}} e^{-\pi x^2}e^{-\pi i \lambda x^2} e^{-2\pi i x \xi} dx, 
-\eQe
-By integration by parts, it follows that
-\eQb
-\int_{-N}^{N} e^{-\pi x^2}e^{-\pi i \lambda x^2} e^{-2\pi i x \xi} dx &=&  
-\eQe
-It follows that, for some absolute constant $C$, with any $\xi \in \mathbb{R}$,
-\eQb
-|\hat{f_{\lambda}}(\xi)| \leq C\lambda^{-\frac{1}{2}},
-\eQe
+|\hat{f_{\lambda}}(\xi)| &=& 
+ |\int_{\mathbb{R}} e^{-(\frac{y-\xi\sqrt{\frac{\pi}{\lambda}}}{2})^2} e^{-iy^2} dy| \\
+&\leq& 
+|\int_{\xi\sqrt{\frac{\pi}{\lambda}}}^{\infty}
+ e^{-(\frac{y-\xi\sqrt{\frac{\pi}{\lambda}}}{2})^2} e^{-iy^2} dy| \\
+&+& |\int_{-\infty}^{\xi\sqrt{\frac{\pi}{\lambda}}}
+ e^{-(\frac{y-\xi\sqrt{\frac{\pi}{\lambda}}}{2})^2} e^{-iy^2} dy| \\
+&=& |\int_{\xi\sqrt{\frac{\pi}{\lambda}}}^{\infty}
+ 2(\dfrac{y-\xi\sqrt{\frac{\pi}{\lambda}}}{\lambda})\dfrac{1}{\lambda}
+e^{-(\frac{y-\xi\sqrt{\frac{\pi}{\lambda}}}{2})^2} F(y) dy| \\
+&+& |\int_{-\infty}^{\xi\sqrt{\frac{\pi}{\lambda}}}
+2(\dfrac{y-\xi\sqrt{\frac{\pi}{\lambda}}}{\lambda})\dfrac{1}{\lambda}
+ e^{-(\frac{y-\xi\sqrt{\frac{\pi}{\lambda}}}{2})^2} F(y) dy| \leq C,\\
+\eQe 
+for some absolute constant $C$,
 so
 \eQb
 ||\hat{f}_{\lambda}||_{\infty} \leq C\lambda^{-\frac{1}{2}}, 
@@ -241,7 +245,7 @@ that the differentiation under integral sign is justified, and
 \dfrac{d^n}{dx} f(x) = \int_{-\Lambda}^{\Lambda} \dfrac{d^n}{dx} \hat{f}(\xi)e^{2\pi i x \xi } dx,
 \eQe
 for any $n \in \mathbb{N}$. Since $e^{2\pi i x \xi}$ is in $C^{\infty}$ with respect to the $x$ 
-variable, we have shown that $f$ is Lebesgue equivalent to $C^{\infty}$
+variable, we have shown that $f$ is Lebesgue equivalent to $C^{\infty}$.
 
 \bigskip
 
@@ -293,7 +297,7 @@ $(ii)$ is also satisfied (argued in $(b)$ more explicitly), so we conclude that 
 
 \end{solution}
 
-\newpage
+\bigskip
 
 \begin{question}[3]
 \hfill
@@ -304,11 +308,50 @@ $(ii)$ is also satisfied (argued in $(b)$ more explicitly), so we conclude that 
 \end{question}
 \begin{solution} \hfill \\
 
-\textbf{(a)} By definition of ONS, we have
+\textbf{(a)} We use the idea of periodization to prove both directions. 
+For the converse, we compute, for any $n,m \in \mathbb{Z}$,
 \eQb
-\{ e_n \varphi(x)\}_{m \in \mathbb{Z}} \> \text{ is an ONS} \iff 
-\int e_n \varphi \overline{e_m \varphi}(x) dx = 0 
+<e_n \phi , \overline{e_m \phi} > &=& \sum_{k \in \mathbb{Z}} 
+\int_{[0,1]-k} e^{2\pi i (n-m)x} |\phi(x)|^2 dx.
 \eQe
+With a change of variable $y = x + k$, the RHS of the above equality becomes
+\eQb
+\sum_{k \in \mathbb{Z}} \int_{0}^{1} e^{2\pi i (n-m)(y-k)} |\phi(y-k)|^2 dy, 
+\eQe
+which can be re-written as
+\eQb
+\int_{0}^{1} e^{2\pi i(n-m)y}\sum_{k \in \mathbb{Z}} |\phi(y-k)|^2 dy,
+\eQe
+and again be simplified to
+\eQb
+\int_{0}^{1} e^{2\pi i (n-m)y} dy,
+\eQe
+as the summand in the integral equals $1$ (absolutely convergent) by assumption and
+$e_n$ is periodic to justify the interchange of the summand and the integral.
+ With the last expression, we see that
+$<e_n \phi, \overline{e_m \phi}>$ equals $1$ if $n = m$ and $0$ if $n \neq m$, which shows that
+the given system is orthonormal. Now, for the forward direction, 
+as $\phi \in L^2$, $|\phi|^2 \in L^1$,
+we can set
+\eQb
+|\phi|_{\text{per}}^2 = \sum_{k \in \mathbb{Z}} |\phi(x-k)|^2.
+\eQe
+Taking a Fourier coefficient gives
+\eQb
+\widehat{|\phi|^2_{\text{per}}}(n) &=& \int_{\mathbb{T}} |\phi|_{\text{per}}^2 e^{-2\pi i n x} dx \\
+&=& \int_{\mathbb{T}} \sum_{k \in \mathbb{Z}} |\phi(x-k)|^2 e^{-2\pi i nx } dx \\
+&=& \int_{\mathbb{R}} |\phi(x)|^2 e^{-2\pi i nx} dx.
+\eQe
+By the orthornomral assumption, the above equality reveals that $\widehat{|\phi|^2_{\text{per}}}(n)$
+is $1$ for the $0$th term and $0$ for the rest. Using the Cesaro convergence in $L^1$, we see that
+\eQb
+||1 - |\phi|^2_{\text{per}}|| = 0,
+\eQe
+which implie that $|\phi|_{\text{per}}|^2 = 1$ a.e., so by the established identity
+\eQb
+\sum_{k \in \mathbb{Z}} |\phi(x-k)|^2 = 1 \> \> \text{ a.e.},
+\eQe
+as required.
 
 \textbf{(b)}
 As $\varphi \in L^2$, we have $\hat{\varphi} \in L^2$. From $(a)$, it follows that
@@ -331,6 +374,7 @@ and the first equivalence implies
 \{\varphi(\xi -m )\}_{m \in \mathbb{Z}} \> \text{ is an ONS} 
 \eQe
 as required. \hfill $\qed$
+
 \end{solution}
 
 \newpage 
@@ -378,10 +422,35 @@ Therefore, we have shown that the translation operator is invariant on $B_{\Lamb
 \bigskip 
 
 \textbf{(c)} 
-Now, $f \in B_{\Lambda}^{1}$ can be expressed as
+Consider the space of functions defined by
 \eQb
-f &=& \sum_{n \in \mathbb{Z}} <f,\text{sinc}(\cdot - n)>\text{sinc}(\cdot -n)
+B_{\Lambda}^{2'} &=& \{ f \in L^2 \> | \> f(\xi) = 0 \> \text{ if } |\xi| > \dfrac{1}{2} \}.
+\eQe
+By Plancherel's theorem, the Fourier transform is a linear isometry from
+$B_{\Lambda}^{2}$ to $B_{\Lambda}^{2'}$. We see that $\{e^{-2\pi i n \xi}1_{-(\frac{1}{2},\frac{1}{2}]}
+\}$ is an orthonormal basis in $B_{\Lambda}^{2'}$. By the isometry relation, to show that the given
+sinc set is an orthornal basis, it suffices to show that the the identified orthonormal basis is mapped to
+sinc functions by inverse of the Fourier transform, which can be shown as
+\eQb
+F^{-1}(e^{-2\pi i n \xi })(x) &=& \int_{-\frac{1}{2}}^{\frac{1}{2}} 
+e^{-2\pi i n \xi }e^{2\pi i \xi x} d\xi \\
+&=& \text{sinc}(x -n), 
+\eQe 
+as required. 
+
+Now, let $f \in B_{\Lambda}^{1}$ and $g = F(f)$. Using the basis identified, it follows that 
+\eQb
+g(\xi) &=& \sum_{n \in \mathbb{Z}} <g,e^{-2\pi i n \xi }> e^{-2\pi i n \xi}.
+\eQe
+Taking the inverse of the Fourier transform gives
+\eQb
+f(\xi) &=& \sum_{n \in \mathbb{Z}} <g,e^{-2\pi i n \xi}>\text{sinc}(\cdot -n),
 \eQe    
+which can be re-written as
+\eQb
+f(\xi) &=& \sum_{n \in \mathbb{Z}} f(n) \text{sinc}(\cdot -n),
+\eQe
+as $<g,e^{-2\pi i n \xi}> = f(n)$. Therefore, we are done.
 
 \bigskip
 
@@ -393,7 +462,8 @@ f &=& \sum_{n \in \mathbb{Z}} <f,\text{sinc}(\cdot - n)>\text{sinc}(\cdot -n)
 In view of Parseval's theorem, we see that the first sum on the RHS converges, so
 it suffices to show that the $\text{sinc}$ sum is uniformly bounded, but 
 this can be shown with the comparison test with $\sum_{n \in \mathbb{Z}} \dfrac{1}{n^2}$. 
-Therefore, the sum is uniformly bounded for all $t \in \mathbb{R}$, so the convergence is uniform.
+Therefore, the sum is uniformly bounded for all $t \in \mathbb{R}$, so the convergence is uniform by
+Weistrauss M-test. \hfill $\qed$
 
 \end{solution}
 
