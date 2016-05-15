@@ -221,14 +221,14 @@ we can extract a subsequence $\{ K_{n_l} \}$
 such that $K_{n_l} \to \mu$ weakly in $L^1$, for some $\mu \in M(\mathbb{T})$.
  For notational convenience, we
 relabel the subsequence as $\{ K_n \}$. Now, assume that $T$ commutes 
-with translations. It follows that, for any $f \in L^1(\mathbb{T})$, and $x \in \mathbb{T}$, 
+with translations. It follows that, for any $f \in C(\mathbb{T})$, and $x \in \mathbb{T}$, 
 \eQb
 f * \mu (x) &=& \lim_{n \to \infty} \int_{\mathbb{T}} f(t)T(K_n) (x - t) dt 
 = \lim_{n \to \infty} \int_{\mathbb{T}} f(t)T(K_n(x - t)) dt, \\
 &=& \lim_{n \to \infty} \int_{\mathbb{T}} T(f(t)(K_n) (x - t)) dt, 
 = \lim_{n \to \infty} T\left(\int_{\mathbb{T}} f(t) K_n(x-t) dt \right),
 \eQe
-which via boundedness of $T$ and the fact that
+which via boundedness of $T$ and the fact that $f \in C(\mathbb{T})$, 
 \eQb
 \lim_{n \to \infty} (f*K_n) (x) = f(x),
 \eQe
@@ -236,7 +236,10 @@ implies that
 \eQb
 f* \mu(x)&=& T \left( \lim_{n \to \infty} \int_{\mathbb{T}} f(t) K_n(x-t) dt \right) = Tf(x),
 \eQe  
-as required. 
+as required. Now, as $C(\mathbb{T})$ is dense in $L^1(\mathbb{T})$, it follows that
+\eQb
+f* \mu &=& Tf 
+\eQe 
 
 
 \end{solution}
@@ -251,6 +254,24 @@ as required.
 \end{figure}
 \end{question}
 \begin{solution} \hfill \\
+\textbf{(a)} Suppose $m$ is a monotonic step function given by 
+\eQb
+T_{m}f &=& (m\hat{f})^{\wedge} = \left( \sum_{i=1}^{n} c_i X_{[\alpha_{i}, \alpha_{i+1})} \hat{f}\right)^{\wedge}.
+\eQe
+Under this setting, we simply have that 
+\eQb
+||m||_{\infty} = \max_{i}| |c_i| \> \text{ and } \> |m|_{TV} = \sum_{i=1}^{n-1} |c_{i+1} - c_{i}|  
+\eQe
+We have that
+\eQb
+||T_m||_{p \to p} \leq  C(p) 
+\eQe
+
+
+
+\bigskip
+
+\textbf{(b)}
 \end{solution}
 
 \newpage
