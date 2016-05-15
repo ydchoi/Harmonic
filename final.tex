@@ -107,25 +107,34 @@ of Harmonic Analysis 2016 at Courant Institute of Mathematical Sciences.
 P &=& \sum_{|k| \leq N} a_k e_k,
 \eQe 
 where $a_k$s are the complex coefficients. 
-Suppose $|k| \leq N$. We trivially know that $\hat{P}(k) = a_k$. We compute the LHS as 
+Suppose $|k| \leq N$. We trivially know that $\hat{P}(k) = a_k$. We compute
 \eQb
 \widehat{p_k} &=& \sum_{n \in \mathbb{Z}_{2N+1}} p_n e^{\frac{-2\pi i n k}{2N+1}} 
 = \sum_{n \in \mathbb{Z}_{2N+1}} \dfrac{1}{2N+1} P(\dfrac{n}{2N + 1}) e^{-\frac{2\pi i n k}{2N+1}} \\
 &=& \dfrac{1}{2N+1}\sum_{n \in \mathbb{Z}_{2N+1}} \left( 
 \sum_{|l| \leq N} a_l e_{l}(\dfrac{n}{2N+1}) \right) 
-e^{-\frac{2\pi i n k}{2N+1}} \\ 
-&=& \dfrac{1}{2N+1}\sum_{n \in \mathbb{Z}_{2N+1}} \left( 
+e^{-\frac{2\pi i n k}{2N+1}}  
+= \dfrac{1}{2N+1}\sum_{n \in \mathbb{Z}_{2N+1}} \left( 
 \sum_{|l| \leq N} a_l e^{\frac{2\pi i l n}{2N+1}} \right) 
 e^{-\frac{2\pi i n k}{2N+1}} \\
 &=& \dfrac{1}{2N+1}\sum_{n \in \mathbb{Z}_{2N+1}} \left( 
 \sum_{|l| \leq N} a_l e^{\frac{2\pi i (l-k) n}{2N+1}} \right) 
-= \dfrac{1}{2N+1}\sum_{n \in \mathbb{Z}_{2N+1}} a_n = a_n  
+= \dfrac{1}{2N+1} \sum_{|l| \leq N} \left( a_l \sum_{n \in \mathbb{Z}_{2N+1}} e^{\frac{2\pi i (l-k)n}{2N+1}}
+\right) \\
+&=& \dfrac{1}{2N+1} \sum_{|l| \leq N; l \neq k} \left( 
+a_l \sum_{n \in \mathbb{Z}_{2N+1}} e^{\frac{2\pi i (l-k)n}{2N+1}} 
+\right)
++ \dfrac{1}{2N+1} \sum_{|l| \leq N; l = k} \left( 
+a_l \sum_{n \in \mathbb{Z}_{2N+1}} e^{\frac{2\pi i (l-k)n}{2N+1}} \right) \\
+&=& 0 + \dfrac{1}{2N+1}(2N+1) a_k = a_k,
 \eQe
-as required. Now, for $|k| > N$, we see that $\widehat{p}_k = 0$, and $\hat{P}(k) = 0$ as well.
-
+as the sum of any $N$-th root of unity is zero, thereby forcing the first term of the second last equation 
+to be $0$. 
+For $|k| > N$, we trivially see that $\widehat{p}_k = 0$, and $\hat{P}(k) = 0$ as well.
+\hfill $\qed$
 \end{solution}
 
-\newpage
+\bigskip
 
 \begin{question}[1-2]
 \hfill
@@ -141,16 +150,16 @@ Define as before $f \triangleq (f_n)_{n \in \mathbb{Z}}$ to be the $(2N+1)$-peri
 f_n \triangleq \dfrac{1}{2N+1}F(\dfrac{n}{2N+1}).
 \eQe
 With $F = (F- P) + P$ and $f = (f-p) + p$, by the result of $(a)$, for any $|k| \leq N$, we see that
-\eQb
+\eQb \label{eq1}
 |\widehat{f_k} - \hat{F}_k| &=& |\reallywidehat{\{(f-p) + p\}}_k - 
-\reallywidehat{(F-P)+P}(k)| \\ 
-&=& |\widehat{(f-p)}_k - \reallywidehat{(F-P)}(k) + \hat{p}_k - \hat{P}(k)| \\
+\reallywidehat{(F-P)+P}(k)| 
+= |\widehat{(f-p)}_k - \reallywidehat{(F-P)}(k) + \hat{p}_k - \hat{P}(k)| \nonumber \\
 &\leq&  
-|\widehat{(f-p)}_k| + |\reallywidehat{(F-P)}(k)| + | \hat{p}_k - \hat{P}(k)|. \\
-&=&
-|\widehat{(f-p)}_k| + |\reallywidehat{(F-P)}(k)|.
+|\widehat{(f-p)}_k| + |\reallywidehat{(F-P)}(k)| + | \hat{p}_k - \hat{P}(k)| 
+=
+|\widehat{(f-p)}_k| + |\reallywidehat{(F-P)}(k)|. \>\> (1)
 \eQe
-Hence, as $N$ is finite, it suffices to show that for any $|k| \leq N$,
+Now, in view of \eqref{eq1}, and the fact that $N$ is finite, it suffices to show that for any $|k| \leq N$,
 \eQb
 |\widehat{(f-p)}_k| \leq ||F-P||_{\infty} \> \text{and} \> |\reallywidehat{(F-P)}(k)| \leq ||F-P||_{\infty}.
 \eQe
@@ -161,8 +170,6 @@ Now, for $|k| \leq N$, the first inequality follows, as
 e^{\frac{-2\pi i n k}{2N+1}}| \\
 &\leq& \dfrac{1}{2N+1} \sum_{n \in \mathbb{Z}_{2N+1}} |F(\dfrac{n}{2N+1}) - P(\dfrac{n}{2N+1})| = ||F-P||_{\infty}.  
 \eQe
-
-\newpage
 
 Likewise, for $|k| \leq N$, the second inequality, as $F-P \in C(\mathbb{T})$, and 
 \eQb
@@ -175,6 +182,14 @@ Therefore, we have that for any trig polynomial of degree $N$, $P$,
 \max_{|k| \leq N} | \hat{f}_{k} - \hat{F}(k)| &\leq& 2||F- P||_{\infty},
 \eQe
 as required. 
+
+\bigskip
+
+\textbf{(c)}
+
+\bigskip
+
+\textbf{(d)}
 
 
 \end{solution}
@@ -310,13 +325,33 @@ we have
 \eQb
 \hat{f} = 0 \> \text{ a.e} \> &\text{ or }& \> \hat{f} = 1 \> \text{a.e}.
 \eQe
-Let $E_1 = \{ \hat{f} = 1\}$ and $E_0 = \{ \hat{f} = 0 \}$. Note that
-as $\hat{f} \in L^2$, it follows that $m(E_1) < \infty$. Now, by the inversion formula for $L^2$,
+Let $E_1 = \{ \hat{f} = 1\}$ and $E_0 = \{ \hat{f} = 0 \}$.
+As $\hat{f} \in L^2$, it follows that 
+\eQb
+||\hat{f}||_{2} &=& (\int_{\mathbb{R}} |\hat{f}(\xi)|^2)^{-2} = m(E_1)^{-2} < \infty, 
+\eQe
+so
+\eQb
+m(E_1) < \infty,
+\eQe
+and, for any $p \geq 1$, 
+\eQb
+||\hat{f}||_{p} &=& (\int_{\mathbb{R}} |\hat{f}(\xi)|^p)^{-p} = m(E_1)^{-p} < \infty. 
+\eQe
+Therefore, we see that, for $1 \leq p \leq \infty$,
+\eQb
+\hat{f} \in L^p,
+\eQe
+as the infinity bound follows trivially.
+
+\smallskip
+
+Now, we first prove the uniform continuity of $f$. By the inversion formula for $L^2$,
 we obtain
 \eQb
 f(x) &=& \int_{\mathbb{R}} \hat{f}(\xi)e^{2\pi i \xi x} d\xi = \int_{E_1} e^{2\pi i \xi x} d\xi. 
 \eQe
-Now, for any $\delta > 0$ and $x \in \mathbb{R}$, it follows that
+Therefore, for any $\delta > 0$ and $x \in \mathbb{R}$, it follows that
 \eQb
 |f(x + \delta) - f(x)| &=& | \int_{E_1} e^{2\pi i \xi (x + \delta)}  - 
 e^{2\pi i \xi x}| d\xi  
@@ -325,13 +360,28 @@ e^{2\pi i \xi x}| d\xi
 \int_{E_1} |e^{2\pi i \xi \delta } - 1| d\xi. \\
 \eQe
 Observe that the last integral is independent of $x$, and the integrand tends to $0$,
-as $\delta \to 0$. Therefore, we have shown that $f$ is uniformly continuous. We now argue that
-$f \in L^p$ for $p \in [2,\infty]$. Fix $p \in [2,\infty]$.  
+as $\delta \to 0$. Therefore, we have shown that $f$ is uniformly continuous. 
 
+\smallskip
+
+We now argue that
+$f \in L^p$ for $p \in [2,\infty]$. We employ Riesz-Thorin to the Fourier inversion operator. 
+Since the Fourier inversion is bounded from $L^1$ to $L^{\infty}$ and from $L^2$ to $L^2$, by
+Riesz-Thorin, we have that the inversion is bounded from $p$ to $q$ where $1 \leq p \leq 2$
+and $q$ is the conjugate of $p$. In particular, for $2 \leq p \leq \infty$, we see that
+\eQb
+||f||_{p} &\leq& ||\hat{f}||_{q}, 
+\eQe
+where $q$ is again the conjugate of $p$.
+As we have previously shown that $\hat{f} \in L^p$, for all $1 \leq p \leq \infty$, we are done.
 
 \bigskip
 
-\textbf{(c)} 
+\textbf{(c)} Let $f \in L^p$ such that $f = f*f$. As $p \in (1,2)$, it follows that $\hat{f} \in L^q$,
+where $q$ is the conjugate of $p$.
+As $\hat{f} \in L^q$, by the same argument from $(b)$, we have that $\hat{f} \in L^2$.
+Therefore, we have shown that $\hat{f} \in L^2$, so $f \in L^2$, as the Fourier transform is an isometry on
+$L^2$. \hfill $\qed$  
 
 \end{solution}
 \end{document}
