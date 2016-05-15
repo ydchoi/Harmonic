@@ -269,27 +269,66 @@ f* \mu &=& Tf
 \end{figure}
 \end{question}
 \begin{solution} \hfill \\
-\textbf{(a)} Suppose $m$ is a monotonic step function given by 
+\textbf{(a)} We fix the index in the definition of $m$ to start at $0$ (likely to be a typo).
+ Suppose $m$ is a monotonic step function given by 
 \eQb
-T_{m}f &=& (m\hat{f})^{\wedge} = \left( \sum_{i=1}^{n} c_i X_{[\alpha_{i}, \alpha_{i+1})} \hat{f}\right)^{\wedge}.
+m &=& \sum_{i=0}^{n} c_i X_{[\alpha_{i}, \alpha_{i+1})}.
 \eQe
-Under this setting, we simply have that 
+As $T_{[0,\infty)} = (iH + \dfrac{1}{2}I)$ (this fact was discussed in class), we have that
 \eQb
-||m||_{\infty} = \max_{i}| |c_i| \> \text{ and } \> |m|_{TV} = \sum_{i=1}^{n-1} |c_{i+1} - c_{i}|  
+T_{[a,\infty)}f &=& e^{2\pi i a x} iHf(x) + \dfrac{1}{2} f(x),
 \eQe
-We have that
+so
 \eQb
-||T_m||_{p \to p} \leq  C(p) 
+T_{m}f &=& T_{\sum_{i=0}^{n} c_i X_{[\alpha_i, \alpha_{i+1}]}} 
+= c_0 I + \sum_{i=0}^{n-1} (c_{i+1} - c_i) T_{[\alpha_{i+1},\infty)} \\
+&=& c_0 I + 
+ \sum_{i=0}^{n-1} (c_{i+1}-c_i)
+(e^{2\pi i \alpha_{i+1}} iHf + \dfrac{1}{2}f) .
 \eQe
-
-
+Now, by the triangle inequality, and the fact that the Hilbert Transform is bounded on $L^p$ 
+(recall that the bound constant is dependent on $p$) for 
+$1 < p < \infty$, we obtain
+\eQb
+||T_m f||_{p} &\leq& |c_1|||f||_{p} + \sum_{i=0}^{n-1} |c_{i+1}
+- c_i|(||Hf||_{p} + \dfrac{1}{2}||f||_{p}) \\
+&\leq& C_p (|c_1| + \sum_{i=0}^{n-1} |c_{i+1} - c_i|) ||f||_p
+\leq C_p (||m||_{\infty} + |m|_{TV}) ||f||_{p}, \\
+\eQe
+for some constant $C_p$, depended on $p$, so
+\eQb
+||T_m||_{p\to p} \leqslant_{p} (||m||_{\infty} + |m|_{TV}),
+\eQe
+as required.
 
 \bigskip
 
 \textbf{(b)}
+Let $m$ be a function of bounded variation. As having a bounded variation implies being bounded, it follows that
+\eQb
+||m||_{\infty} < \infty. 
+\eQe
+Now, as $m$ is measurable,  we can 
+choose a sequence of monotonic step functions that converge pointwise to $m$ such that 
+$|m_n| \leq |m|$ for all $n$. Therefore, by DCT, for any $f \in L^p$, with $1 < p < \infty$,
+it follows that, for the pointwise limit,
+\eQb
+\lim_{n \to \infty} T_{m_n} f &=& \lim_{n \to \infty} \int_{\mathbb{R}} m_n(\xi) \hat{f}(\xi)  
+e^{2\pi i \xi} d\xi 
+= \int_{\mathbb{R}} m(\xi)\hat{f}(\xi) e^{2\pi i \xi} d\xi = T_m f. 
+\eQe
+Therefore, by Fatou 
+\eQb
+||T_m f||_{p} \leq \liminf_{n} ||T_{m_n} f||_{p},
+\eQe
+and by $(a)$, and the choice of $\{m_n\}$
+\eQb
+||T_m f||_{p} \leq \liminf_{n} ||T_{m_n} f||_{p} \leqslant_{p} (||m||_{\infty} + |m|_{TV}),
+\eQe
+as required. \hfill $\qed$
 \end{solution}
 
-\newpage
+\bigskip
 
 \begin{question}[4]
 \hfill
