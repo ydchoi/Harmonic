@@ -205,27 +205,49 @@ as required.
 \end{question}
 \begin{solution} \hfill \\
 \textbf{(a)}
-Fix $ h \in \mathbb{T}$. Suppose that, for some $\xi \in l^{\infty}(\mathbb{Z})$, we have
+We first prove the equivalence for $\{e_n\}$. 
+Fix $ h \in \mathbb{T}$.
+Suppose that, for some $\xi \in l^{\infty}(\mathbb{Z})$, we have
 \eQb
-Tf &=& \sum_{n \in \mathbb{Z}} \xi_{n} \hat{f}(n) e_n, 
+Te_n &=& \sum_{n \in \mathbb{Z}} \xi_{n} \hat{f}(n) e_n, 
 \eQe
-for some $\xi \in l^{\infty}(\mathbb{Z})$. It follows that, for any $n \in \mathbb{Z}$, by linearity of $T$,
+for all $n$. As $\hat{e_n}(k) = 1$, if $k = n$ and $0$ otherwise, it follows that, for all $n$,
 \eQb
-T(\tau_{h}(e_n)) &=& e^{-2\pi i n h} T(e_n) 
+Te_n &=& \xi_{n} e_n,
+\eQe
+and, by linearity of $T$,
+\eQb
+T(\tau_{h}(e_n)) &=& T(e^{2\pi i n(\cdot-h)}) = e^{2\pi i n h} T(e_n) 
 = e^{-2\pi i n h} \xi_n e_n = \tau_h(T(e_n)).
 \eQe
-With the fact that the trig polynomials are dense in $L^2$, through a standard density argument, we obtain
-\eQb
-T(\tau_{h}(f) &=& \tau_{h}(T(f)),
-\eQe
-as required. 
-Conversely, 
+Conversely, assume that $T(\tau_h e_n) = T($.
 
-Now, let $f = \dfrac{||\xi||_{\infty}}{|\xi_n|} e_n$ for some fixed $n$. By the established equivalence, 
-it follows that 
+As $Te_n \in L^2$, by Riemann-Lebesgue lemma, it follows that
 \eQb
-||Tf||_{2} &=& 
+\xi_n = \widehat{Te_n}(n) \to 0,
+\eQe 
+as $n \to \infty$, so $\{ \xi_n \} \in l^{\infty}(\mathbb{Z})$, as required.
+
+\smallskip
+
+Now, we argue that the equvialence can be extended to any $f \in L^2$. Suppose that the operator
+commutes with the translation operator for any $e_n$. Then, it follows that, for any $f \in L^2$,
+\eQb
+T(\tau_h f) &=& T(\tau_h \sum_{n \in \mathbb{Z}} \hat{f}(n)e_n) = \sum_{n \in \mathbb{Z}} \hat{f}(n)
+T(\tau_h e_n) \\
+&=& \sum_{n \in \mathbb{Z}} \hat{f}(n) \tau_h(Te_n) = \tau_h(T f). 
 \eQe
+The converse holds trivially. Now, suppose that the operator has the given description with respect to
+$\{e_n\}$. It follows that, for any $f \in L^2$,
+\eQb
+Tf &=& T(\sum_{n \in \mathbb{Z}} \hat{f}(n) e_n ) = \sum_{n \in \mathbb{Z}} \hat{f}(n) T(e_n) = 
+\sum_{n \in \mathbb{Z}} \xi_n \hat{f}(n)  e_n. 
+\eQe
+The converse in this case also holds trivially. Thus, we have shown the desired equivalence. 
+
+\smallskip
+
+We now argue that $||T||_{2 \to 2} = ||\xi||_{\infty}$. 
 
 \bigskip
 
@@ -269,10 +291,10 @@ f* \mu &=& Tf
 \end{figure}
 \end{question}
 \begin{solution} \hfill \\
-\textbf{(a)} We fix the index in the definition of $m$ to start at $0$ (likely to be a typo).
+\textbf{(a)} We fix the index in the definition of $m$ to start at $0$ and end at $n-1$.
  Suppose $m$ is a monotonic step function given by 
 \eQb
-m &=& \sum_{i=0}^{n} c_i X_{[\alpha_{i}, \alpha_{i+1})}.
+m &=& \sum_{i=0}^{n-1} c_i X_{[\alpha_{i}, \alpha_{i+1})}.
 \eQe
 As $T_{[0,\infty)} = (iH + \dfrac{1}{2}I)$ (this fact was discussed in class), we have that
 \eQb
@@ -280,19 +302,19 @@ T_{[a,\infty)}f &=& e^{2\pi i a x} iHf(x) + \dfrac{1}{2} f(x),
 \eQe
 so
 \eQb
-T_{m}f &=& T_{\sum_{i=0}^{n} c_i X_{[\alpha_i, \alpha_{i+1}]}} 
-= c_0 I + \sum_{i=0}^{n-1} (c_{i+1} - c_i) T_{[\alpha_{i+1},\infty)} \\
+T_{m}f &=& T_{\sum_{i=0}^{n-1} c_i X_{[\alpha_i, \alpha_{i+1}]}} 
+= c_0 I + \sum_{i=0}^{n-2} (c_{i+1} - c_i) T_{[\alpha_{i+1},\infty)} \\
 &=& c_0 I + 
- \sum_{i=0}^{n-1} (c_{i+1}-c_i)
+ \sum_{i=0}^{n-2} (c_{i+1}-c_i)
 (e^{2\pi i \alpha_{i+1}} iHf + \dfrac{1}{2}f) .
 \eQe
 Now, by the triangle inequality, and the fact that the Hilbert Transform is bounded on $L^p$ 
 (recall that the bound constant is dependent on $p$) for 
 $1 < p < \infty$, we obtain
 \eQb
-||T_m f||_{p} &\leq& |c_1|||f||_{p} + \sum_{i=0}^{n-1} |c_{i+1}
+||T_m f||_{p} &\leq& |c_0|||f||_{p} + \sum_{i=0}^{n-2} |c_{i+1}
 - c_i|(||Hf||_{p} + \dfrac{1}{2}||f||_{p}) \\
-&\leq& C_p (|c_1| + \sum_{i=0}^{n-1} |c_{i+1} - c_i|) ||f||_p
+&\leq& C_p (|c_0| + \sum_{i=0}^{n-2} |c_{i+1} - c_i|) ||f||_p
 \leq C_p (||m||_{\infty} + |m|_{TV}) ||f||_{p}, \\
 \eQe
 for some constant $C_p$, depended on $p$, so

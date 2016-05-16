@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  15 MAY 2016 18:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  15 MAY 2016 20:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -611,35 +611,35 @@ File: HA-f-2.png Graphic file (type png)
  <use HA-f-2.png>
 Package pdftex.def Info: HA-f-2.png used on input line 203.
 (pdftex.def)             Requested size: 317.9892pt x 147.60948pt.
- [4 <./HA-f-2.png>] <HA-f-3.png, id=47, 590.205pt x 385.44pt>
+ [4 <./HA-f-2.png>] [5] <HA-f-3.png, id=51, 590.205pt x 385.44pt>
 File: HA-f-3.png Graphic file (type png)
  <use HA-f-3.png>
-Package pdftex.def Info: HA-f-3.png used on input line 268.
+Package pdftex.def Info: HA-f-3.png used on input line 290.
 (pdftex.def)             Requested size: 317.9892pt x 207.66988pt.
- [5 <./HA-f-3.png>] <HA-f-4.png, id=55, 635.37375pt x 235.88126pt>
+ [6 <./HA-f-3.png>] <HA-f-4.png, id=59, 635.37375pt x 235.88126pt>
 File: HA-f-4.png Graphic file (type png)
  <use HA-f-4.png>
-Package pdftex.def Info: HA-f-4.png used on input line 337.
+Package pdftex.def Info: HA-f-4.png used on input line 359.
 (pdftex.def)             Requested size: 317.9892pt x 118.05551pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 340--341
+Underfull \hbox (badness 10000) in paragraph at lines 362--363
 
  []
 
-[6 <./HA-f-4.png>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 426.
- [7]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 426.
+[7 <./HA-f-4.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 448.
+ [8]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 448.
  (./final.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 426.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 426.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 448.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 448.
 Package rerunfilecheck Info: File `final.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 426.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 448.
  ) 
 Here is how much of TeX's memory you used:
- 10741 strings out of 493089
- 158913 string characters out of 6134842
+ 10742 strings out of 493089
+ 158919 string characters out of 6134842
  264240 words of memory out of 5000000
  14042 multiletter control sequences out of 15000+600000
  15391 words of font info for 40 fonts, out of 8000000 for 9000
@@ -663,10 +663,10 @@ texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2
 e/2015/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2015/t
 exmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/
 fonts/type1/urw/times/utmr8a.pfb>
-Output written on final.pdf (7 pages, 596214 bytes).
+Output written on final.pdf (8 pages, 597916 bytes).
 PDF statistics:
- 127 PDF objects out of 1000 (max. 8388607)
- 90 compressed objects within 1 object stream
- 13 named destinations out of 1000 (max. 500000)
+ 131 PDF objects out of 1000 (max. 8388607)
+ 93 compressed objects within 1 object stream
+ 14 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
