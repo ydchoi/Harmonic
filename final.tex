@@ -230,7 +230,7 @@ as $n \to \infty$, so $\{ \xi_n \} \in l^{\infty}(\mathbb{Z})$, as required.
 
 \smallskip
 
-Now, we argue that the equvialence can be extended to any $f \in L^2$. Suppose that the operator
+Now, we argue that the equivalence can be extended to any $f \in L^2$. Suppose that the operator
 commutes with the translation operator for any $e_n$. Then, it follows that, for any $f \in L^2$,
 \eQb
 T(\tau_h f) &=& T(\tau_h \sum_{n \in \mathbb{Z}} \hat{f}(n)e_n) = \sum_{n \in \mathbb{Z}} \hat{f}(n)
@@ -247,11 +247,13 @@ The converse in this case also holds trivially. Thus, we have shown the desired 
 
 \smallskip
 
-We now argue that $||T||_{2 \to 2} = ||\xi||_{\infty}$. It follows that
+We now argue that $||T||_{2 \to 2} = ||\xi||_{\infty}$. By Parseval, we obtain
 \eQb
 ||T||_{2 \to 2} &=& \sup_{||f||_{2} = 1} ||Tf||_{2} = \sup_{||f||_{2} =1} 
-(\sum_{n \in \mathbb{Z}} |\xi_n \hat{f}(n)|^2)^{\frac{1}{2}}  
+(\sum_{n \in \mathbb{Z}} |\xi_n \hat{f}(n)|^2)^{\frac{1}{2}}  \\ &\leq& \sup_{||f||_{2} = 1} 
+||\xi||_{\infty} (\sum_{n \in \mathbb{Z}}|\hat{f}(n)|^2 )^{\frac{1}{2}} = ||\xi||_{\infty}. 
 \eQe 
+Now, we construct $f \in L^2$, such that $||Tf|| = ||\xi||_{\infty}$.
 
 \bigskip
 
@@ -393,7 +395,7 @@ we have
 Let $E_1 = \{ \hat{f} = 1\}$ and $E_0 = \{ \hat{f} = 0 \}$.
 As $\hat{f} \in L^2$, it follows that 
 \eQb
-||\hat{f}||_{2} &=& (\int_{\mathbb{R}} |\hat{f}(\xi)|^2)^{-2} = m(E_1)^{-2} < \infty, 
+||\hat{f}||_{2} &=& (\int_{\mathbb{R}} |\hat{f}(\xi)|^2)^{\frac{1}{2}} = m(E_1)^{\frac{1}{2}} < \infty, 
 \eQe
 so
 \eQb
