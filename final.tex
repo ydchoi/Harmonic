@@ -209,7 +209,7 @@ We first prove the equivalence for $\{e_n\}$.
 Fix $ h \in \mathbb{T}$.
 Suppose that, for some $\xi \in l^{\infty}(\mathbb{Z})$, we have
 \eQb
-Te_n &=& \sum_{n \in \mathbb{Z}} \xi_{n} \hat{f}(n) e_n, 
+Te_n &=& \sum_{k \in \mathbb{Z}} \xi_{k} \hat{e_n}(k) e_k, 
 \eQe
 for all $n$. As $\hat{e_n}(k) = 1$, if $k = n$ and $0$ otherwise, it follows that, for all $n$,
 \eQb
@@ -220,13 +220,40 @@ and, by linearity of $T$,
 T(\tau_{h}(e_n)) &=& T(e^{2\pi i n(\cdot-h)}) = e^{2\pi i n h} T(e_n) 
 = e^{-2\pi i n h} \xi_n e_n = \tau_h(T(e_n)).
 \eQe
-Conversely, assume that $T(\tau_h e_n) = T($.
-
-As $Te_n \in L^2$, by Riemann-Lebesgue lemma, it follows that
+Conversely, assume that $T(\tau_h e_n) = \tau_hT(e_n)$, for all $n$. 
+Set
+\eQb
+\{\xi_n \} = \{\widehat{Te_n}(n)\}.
+\eQe
+We claim that the above construction gives the desired property. Firstly, $\{\xi_n  \}$
+is bounded, as $Te_n \in L^2 \subset L^1$ (we are on $\mathbb{T}$), so by Riemann-Lebesgue lemma,
 \eQb
 \xi_n = \widehat{Te_n}(n) \to 0,
 \eQe 
-as $n \to \infty$, so $\{ \xi_n \} \in l^{\infty}(\mathbb{Z})$, as required.
+as $n \to \infty$, and $\{ \xi_n \} \in l^{\infty}(\mathbb{Z})$. Now, it remains to be shown that,
+for all $n$,
+\eQb
+Te_n = \sum_{k \in \mathbb{Z}} \widehat{Te_k}(k) \widehat{e_n}(k)e_k. 
+\eQe
+As $T$ is bounded on $L^2$, it follows that
+\eQb
+Te_n = \sum_{k \in \mathbb{Z}} \widehat{Te_n}(k) e_k,
+\eQe
+and by the fact that $T$ commutes with the translation we get
+\eQb
+\sum_{k \in \mathbb{Z}} \widehat{Te_n}(k) e^{2\pi i (k-n)h} e^{2\pi i k(\cdot -h)} = \sum_{k \in \mathbb{Z}}
+\widehat{Te_n}(k) e^{2\pi i k(\cdot-h)},
+\eQe
+so
+\eQb
+\widehat{Te_n}(k) e^{2\pi i(k-n)h} = \widehat{Te_n}(k). 
+\eQe
+Now, the equality holds for all $h \in \mathbb{T}$, so we have that $\widehat{Te_n}(k) = 0$ for any $k \neq n$,
+and hence,
+\eQb
+Te_n = \widehat{Te_n}(n) e_n,
+\eQe
+as required.
 
 \smallskip
 
@@ -253,15 +280,27 @@ We now argue that $||T||_{2 \to 2} = ||\xi||_{\infty}$. By Parseval, we obtain
 (\sum_{n \in \mathbb{Z}} |\xi_n \hat{f}(n)|^2)^{\frac{1}{2}}  \\ &\leq& \sup_{||f||_{2} = 1} 
 ||\xi||_{\infty} (\sum_{n \in \mathbb{Z}}|\hat{f}(n)|^2 )^{\frac{1}{2}} = ||\xi||_{\infty}. 
 \eQe 
-Now, we construct $f \in L^2$, such that $||Tf|| = ||\xi||_{\infty}$.
-
+Now, we construct $f \in L^2$, such that $||Tf|| = ||\xi||_{\infty}$. If $||\xi||_{\infty} = 0$,
+then, the equality immediately follows. If $||\xi||_{\infty} > 0$, as $\{\xi\}_{\infty}$ was 
+shown to converge to $0$, via Riemann-Lebesgue lemma, there exists a finite index $N$ such that
+$|\xi_N| = ||\xi||_{\infty}$. Then, we have that
+\eQb
+||T e_N|| = |\xi_N|,  
+\eQe
+so the equality holds.
 \bigskip
 
-\textbf{(b)} Consider the Fejer kernel, denoted by $\{ K_n \}$. 
-Firstly, observe that as the Fejer kernel is an approximate identity,
-we have $\sup_{N} \int_{0}^{1} |K_n(x)|dx < \infty$, so 
+\textbf{(b)}
+First, suppose that $T f = f * \mu $ for some $\mu \in M(\mathbb{T})$. It follows that
+\eQb
+T(\tau_h f) &=& (\tau_h f) * \mu =  \tau_h (f * \mu) = \tau_h(T f).
+\eQe
+Now, conversely, suppose that $T$ commutes with translations.  
+Consider the Fejer kernel, denoted by $\{ K_n \}$. 
+Firstly, observe that as the Fejer kernel is an approximate identity, it follows that
+$\{T K_n\}$ are bounded on $M(\mathbb{T})$. By the weak-* compactness of $M(\mathbb{T})$,
 we can extract a subsequence $\{ K_{n_l} \}$ 
-such that $K_{n_l} \to \mu$ weakly in $L^1$, for some $\mu \in M(\mathbb{T})$.
+such that $K_{n_l} \to \mu$ weakly, for some $\mu \in M(\mathbb{T})$.
  For notational convenience, we
 relabel the subsequence as $\{ K_n \}$. Now, assume that $T$ commutes 
 with translations. It follows that, for any $f \in C(\mathbb{T})$, and $x \in \mathbb{T}$, 
@@ -271,7 +310,7 @@ f * \mu (x) &=& \lim_{n \to \infty} \int_{\mathbb{T}} f(t)T(K_n) (x - t) dt
 &=& \lim_{n \to \infty} \int_{\mathbb{T}} T(f(t)(K_n) (x - t)) dt, 
 = \lim_{n \to \infty} T\left(\int_{\mathbb{T}} f(t) K_n(x-t) dt \right),
 \eQe
-which via boundedness of $T$ and the fact that $f \in C(\mathbb{T})$, 
+which via boundedness of $T$ and the fact that for any $f \in C(\mathbb{T})$, 
 \eQb
 \lim_{n \to \infty} (f*K_n) (x) = f(x),
 \eQe
@@ -279,15 +318,31 @@ implies that
 \eQb
 f* \mu(x)&=& T \left( \lim_{n \to \infty} \int_{\mathbb{T}} f(t) K_n(x-t) dt \right) = Tf(x),
 \eQe  
-as required. Now, as $C(\mathbb{T})$ is dense in $L^1(\mathbb{T})$, it follows that
+as required. Now, as $C(\mathbb{T})$ is dense in $L^1(\mathbb{T})$, via standard density argument,
+it follows that, for any $f \in L^1(\mathbb{T})$,
 \eQb
-f* \mu &=& Tf 
+f* \mu &=& Tf.
 \eQe 
 
+\smallskip
+
+By Young's inequality for convolution, it follows that
+\eQb
+||T||_{1\to 1} = \sup_{||f|| = 1} ||f * \mu||_{1} \leq \sup_{||f|| = 1 } ||f||_{1} ||\mu||_{M(\mathbb{T})}
+= ||\mu||_{M(\mathbb{T})}.
+\eQe
+We now construct $f \in L^1$ such that $||Tf||_{1} = ||\mu||_{M(\mathbb{T})}$. As $||u|| < \infty$,
+we can choose, a sequence of partition, whose sum of absolute value of the measures of each part, converges
+to the total variation norm. Now, consider the sequence of functions defined by by the sum of characteristic
+functions of the corresponding $n$th partition, denoted by $f_n$. By construction, it follows that
+\eQb
+||T f_n||_1 = ||f_n * \mu|| \to ||\mu||,
+\eQe
+as $n \to \infty$, and the equality holds. \hfill $\qed$
 
 \end{solution}
 
-\newpage
+\bigskip
 
 \begin{question}[3]
 \hfill
