@@ -186,10 +186,26 @@ as required.
 \bigskip
 
 \textbf{(c)}
-
+To begin with, in the video, we can see a particular physical interpretation of the mathematical
+setup we have. $F$ is the square wave and the $f$ are the dots drawn on the square wave, which
+corresponds to the regular samples of $F$. Now, setting the rocker arms, which controls
+the coefficients of the cosine waves, to the values of $f_n$, we get the DFT by reading the
+output wave's discrete positions. 
+The important distinction here is that,
+with the modeling assumption that the given data is an even function, Michelson managed to 
+perform both the synthesis and analysis with the "syntehsis" (adding the cosine waves,
+multiplied by the appropriate coefficients) as the DFT and inversion of DFT are the same
+operations when restricted to cosines. This could be regarded further as a truncated DTFT as mentioned.
+ 
 \bigskip
 
-\textbf{(d)}
+\textbf{(d)} Here, we want to see how close the discrete Fourier coefficients gets to the continuous 
+Fourier coefficient as a function of $N$, which mathematically corresponds to the cardinality of the
+finite Abelian group under consideration. This is precisely the question of convergence of Riemann sum
+to an integral. Here, we are given that the function is piecewise continuous and linear, so by a well-known
+result which says the rate of convergence Riemann sum to Riemann integral of $x^d$ is $\Theta(n^{-(1+d)}$,
+we see that with our assumption the rate of convergence is $\theta(\dfrac{1}{n^2})$. So, for $1000$,
+we approximately have that the difference is bounded above by $\dfrac{1}{1000^2}$. 
 
 
 \end{solution}
