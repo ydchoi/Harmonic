@@ -1,1 +1,1 @@
-pdflatex final.tex && open final.pdf
+pdflatex sol.tex && open sol.pdf
